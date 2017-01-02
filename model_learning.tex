@@ -63,7 +63,7 @@ Which standard assumption has been violated by taking the data from trajectories
 
 \begin{answer}
 	%TODO Wirkt zu einfach. Nachprüfen.
-	We are not learning a function with this. This is a problem as there can be many solutions to one problem resulting in difficulties when learning (using the mean doesn't make sense since the mean of two solutions is itself far off).
+	We are not learning a function with this. This is a problem as there can be many solutions to one problem resulting in difficulties when learning (using the mean is not useful as the mean of two solutions is itself far off).
 \end{answer}
 
 \end{question}
@@ -77,7 +77,7 @@ Assuming that the gravity $g$ is unknown, what are the feature matrix $\vec{\phi
 
 \begin{answer}
 	%Brauche ein Beispiel für die Featurematrix etc. Mir fehlt hier Wissen. Muss man einfach nur [q,\dot(q), \ddot(q)]^T normalisieren?
-$\vec{\theta} = [\phi ()] $
+$\vec{u} = \vec{\phi}^{T}\vec{\theta}$
 
 \end{answer}
 
@@ -120,7 +120,11 @@ Plot the forces and torques predicted by your model over time, as well as those 
 \begin{question}[bonus]{Models for Control}{4}
 Name and describe three different ways to use learned models in control laws or for generating control laws.
 
-\begin{answer}\end{answer}
+\begin{answer}
+We can use \textbf{Controller Falsification} which uses our model to test random Control Laws and outputs the first one that does not fail.\\
+We can also use it to \textbf{optimize our control law} by generating control laws and comparing them to our current best control law. \\
+We can also use our learned model to \textbf{generate a policy} that simplifies our control.
+\end{answer}
 
 \end{question}
 
