@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.12.8)  9 JAN 2017 23:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.12.8)  10 JAN 2017 15:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1450,38 +1450,38 @@ Non-PDF special ignored!
 
 Non-PDF special ignored!{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </h
 ome/temi/texmf/tex/latex/tuddesign/logo/tud_logo.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 101--101
+Underfull \hbox (badness 10000) in paragraph at lines 96--96
 
  []
 
 \height=\dimen187
 
-Underfull \hbox (badness 10000) in paragraph at lines 113--113
+Underfull \hbox (badness 10000) in paragraph at lines 108--108
 
  []
 
 \height=\dimen188
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--122
+Underfull \hbox (badness 10000) in paragraph at lines 117--117
 
  []
 
 \height=\dimen189
 
-Underfull \hbox (badness 10000) in paragraph at lines 132--132
+Underfull \hbox (badness 10000) in paragraph at lines 127--127
 
  []
 
 \height=\dimen190
 
-Underfull \hbox (badness 10000) in paragraph at lines 146--146
+Underfull \hbox (badness 10000) in paragraph at lines 141--141
 
  []
 
 \height=\dimen191
 
 LaTeX Font Warning: Font shape `T1/5ch/b/it' undefined
-(Font)              using `T1/5ch/b/n' instead on input line 146.
+(Font)              using `T1/5ch/b/n' instead on input line 141.
 
 ) (./trajectory_generation.tex [2]
 Underfull \hbox (badness 10000) in paragraph at lines 55--55
@@ -1575,7 +1575,7 @@ thdesign/mdbch/md-chri7m.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super
 f-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf-dist/fonts/ty
 pe1/public/cm-super/sfss0600.pfb></usr/share/texmf-dist/fonts/type1/public/txfo
 nts/t1xtt.pfb>
-Output written on homework.pdf (5 pages, 173865 bytes).
+Output written on homework.pdf (5 pages, 173890 bytes).
 PDF statistics:
  141 PDF objects out of 1000 (max. 8388607)
  112 compressed objects within 2 object streams
