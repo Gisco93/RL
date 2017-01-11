@@ -99,7 +99,15 @@ You want to compute the parameters $\vec{\theta}$ minimizing the squared error b
 Write down the matrix equation that you would use to compute the parameters. For each matrix in the equation, write down its size.\\
 Then, compute the least-squares estimate of the parameters $\vec{\theta}$ from the data and report the learned values.
 
-\begin{answer}\end{answer}
+\begin{answer}
+
+$\theta = (\phi\phi^{T})^{-1}\phi Y$ \\
+$\theta \in \mathbb{R}^{3\times1},$\\
+$\phi \in \mathbb{R}^{3\times300},$\\
+$\phi^T \in \mathbb{R}^{300\times3},$\\
+$Y \in \mathbb{R}^{300\times1}$
+
+\end{answer}
 
 \end{question}
 
