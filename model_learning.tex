@@ -76,24 +76,20 @@ Assuming that the gravity $g$ is unknown, what are the feature matrix $\vec{\phi
 (Hint: you do not need to use the data at this point)
 
 \begin{answer}
-	%Brauche ein Beispiel für die Featurematrix etc. Mir fehlt hier Wissen. Muss man einfach nur [q,\dot(q), \ddot(q)]^T normalisieren?
-%$\vec{u} = \vec{\phi}^{T}\vec{\theta}$
-$
-\vec{\phi}=
+$$\vec{\phi}=
 \begin{bmatrix}
 \ddot{q}_1 & 0 & 0  \\
 \ddot{q}_1 & 2\dot{q}_3\dot{q}_2q_3+q_3^2\ddot{q}_2 & \ddot{q}_3-q_3\dot{q}_2^2  \\
 1 & 0 & 0 
-\end{bmatrix},
-\vec{\theta}=
-[m_{1},m_{2},(m_{1}+m_{2})g]^{\T}$%formatierung könnte besser sein, gab mir einen fehler aus wegen der () als ich es mit bmatrix darstelen wollte
-
-
-
-
+\end{bmatrix}$$
+$$
+\vec{\theta}= 
+\begin{bmatrix} 
+	m_{1} & m_{2} & g \cdot (m_{1}+m_{2})\\
+\end{bmatrix}$$
 \end{answer}
-
 \end{question}
+
 
 %----------------------------------------------
 
