@@ -105,8 +105,13 @@ $\theta = (\phi\phi^{T})^{-1}\phi Y$ \\
 $\theta \in \mathbb{R}^{3\times1},$\\
 $\phi \in \mathbb{R}^{3\times300},$\\
 $\phi^T \in \mathbb{R}^{300\times3},$\\
-$Y \in \mathbb{R}^{300\times1}$
-
+$Y \in \mathbb{R}^{300\times1}$\\
+$\vec{\theta}= 
+\begin{bmatrix} 
+	-0.07297389 \\
+	1.6496578 \\
+	15.09510
+\end{bmatrix}$
 \end{answer}
 
 \end{question}
@@ -117,7 +122,9 @@ $Y \in \mathbb{R}^{300\times1}$
 \begin{question}{Recovering Model Information}{4}
 	Can you recover the mass properties $m_{1}$ and $m_{2}$ from your learned parameters? Has the robot learned a plausible inverse dynamics model? Explain your answers.
 	
-\begin{answer}\end{answer}
+\begin{answer}
+Unfortunately, we cannot recover the mass properties from our learned parameter, since our first parameter, which denoted $m_1$, is negative. From this we deduct, that our learned parameters are not the ones we considered them to be. So the model didn't learn a plausible inverse dynamics model, but some values for the parameters so that the joints were approximated.
+\end{answer}
 \end{question}
 
 %----------------------------------------------
@@ -126,7 +133,19 @@ $Y \in \mathbb{R}^{300\times1}$
 \begin{question}{Model Evaluation}{7}
 Plot the forces and torques predicted by your model over time, as well as those recorded in the data and comment the results. Is the model accuracy acceptable? If not, how would improve your model? Use one figure per joint.
 
-\begin{answer}\end{answer}
+\begin{answer}
+	\includegraphics[width=87mm]{first_joint.png}
+	\includegraphics[width=87mm]{second_joint.png}
+	\includegraphics[width=87mm]{third_joint.png}\\
+	
+	The prediction for the first joint is very precise.\\
+	The second plot shows that the prediction for the second joint at least has the same trend as the real values, but differ especially at around half of the time.\\
+	The predictions of the third joint differ at the beginning and the end the most, and are better at around half of the time. 
+	All in all the models accuracy is not acceptable, since the calculated values for the second and third joints differ to much at some points.\\
+	
+	To improve the model, it would be better if we could integrate the gravity constant directly into the feature matrix, instead of learning it as a parameter, since it is a well known constant. Moreover, a larger dataset could be an advantage.
+
+\end{answer}
 
 \end{question}
 
