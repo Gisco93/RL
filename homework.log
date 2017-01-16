@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.12.8)  16 JAN 2017 16:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.12.8)  16 JAN 2017 16:31
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1473,22 +1473,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 150--150
  []
 
 \height=\dimen190
-<first_joint.png, id=39, 578.16pt x 433.62pt>
-File: first_joint.png Graphic file (type png)
- <use first_joint.png>
-Package pdftex.def Info: first_joint.png used on input line 150.
+<ML/first_joint.png, id=39, 578.16pt x 433.62pt>
+File: ML/first_joint.png Graphic file (type png)
+ <use ML/first_joint.png>
+Package pdftex.def Info: ML/first_joint.png used on input line 150.
 (pdftex.def)             Requested size: 247.53897pt x 185.65236pt.
 
-<second_joint.png, id=41, 578.16pt x 433.62pt>
-File: second_joint.png Graphic file (type png)
- <use second_joint.png>
-Package pdftex.def Info: second_joint.png used on input line 150.
+<ML/second_joint.png, id=41, 578.16pt x 433.62pt>
+File: ML/second_joint.png Graphic file (type png)
+ <use ML/second_joint.png>
+Package pdftex.def Info: ML/second_joint.png used on input line 150.
 (pdftex.def)             Requested size: 247.53897pt x 185.65236pt.
 
-<third_joint.png, id=42, 578.16pt x 433.62pt>
-File: third_joint.png Graphic file (type png)
- <use third_joint.png>
-Package pdftex.def Info: third_joint.png used on input line 150.
+<ML/third_joint.png, id=42, 578.16pt x 433.62pt>
+File: ML/third_joint.png Graphic file (type png)
+ <use ML/third_joint.png>
+Package pdftex.def Info: ML/third_joint.png used on input line 150.
 (pdftex.def)             Requested size: 247.53897pt x 185.65236pt.
 
 Overfull \hbox (24.2216pt too wide) in paragraph at lines 150--150
@@ -1505,17 +1505,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 150--150
 
  []
 
-File: first_joint.png Graphic file (type png)
-<use first_joint.png>
-Package pdftex.def Info: first_joint.png used on input line 150.
+File: ML/first_joint.png Graphic file (type png)
+<use ML/first_joint.png>
+Package pdftex.def Info: ML/first_joint.png used on input line 150.
 (pdftex.def)             Requested size: 247.53897pt x 185.65236pt.
-File: second_joint.png Graphic file (type png)
- <use second_joint.png>
-Package pdftex.def Info: second_joint.png used on input line 150.
+File: ML/second_joint.png Graphic file (type png)
+ <use ML/second_joint.png>
+Package pdftex.def Info: ML/second_joint.png used on input line 150.
 (pdftex.def)             Requested size: 247.53897pt x 185.65236pt.
-File: third_joint.png Graphic file (type png)
- <use third_joint.png>
-Package pdftex.def Info: third_joint.png used on input line 150.
+File: ML/third_joint.png Graphic file (type png)
+ <use ML/third_joint.png>
+Package pdftex.def Info: ML/third_joint.png used on input line 150.
 (pdftex.def)             Requested size: 247.53897pt x 185.65236pt.
 
 Overfull \hbox (26.69897pt too wide) in paragraph at lines 150--150
@@ -1542,7 +1542,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 164--164
 LaTeX Font Warning: Font shape `T1/5ch/b/it' undefined
 (Font)              using `T1/5ch/b/n' instead on input line 164.
 
-[3 <./first_joint.png> <./second_joint.png> <./third_joint.png>])
+[3 <./ML/first_joint.png> <./ML/second_joint.png> <./ML/third_joint.png>])
 (./trajectory_generation.tex
 Underfull \hbox (badness 10000) in paragraph at lines 55--55
 
@@ -1613,8 +1613,8 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 78.
  ) 
 Here is how much of TeX's memory you used:
- 20436 strings out of 493013
- 344882 string characters out of 6139317
+ 20437 strings out of 493013
+ 344921 string characters out of 6139317
  509231 words of memory out of 5000000
  23482 multiletter control sequences out of 15000+600000
  48501 words of font info for 96 fonts, out of 8000000 for 9000
