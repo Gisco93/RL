@@ -32,7 +32,7 @@ def dmpTrain (q, qd, qdd, dt, nSteps):
     params.Ts     = (dt*nSteps)
     params.tau    = 1
     params.nBasis = 50
-    params.goal   = q[-1,:]
+    params.goal   = np.transpose(q[:,-1])
 
     Phi = getDMPBasis(params, dt, nSteps)
 
@@ -40,17 +40,25 @@ def dmpTrain (q, qd, qdd, dt, nSteps):
     tau = params.tau 
     alpha = params.alpha 
     beta = params.beta 
-    goal = params.goal 
-
+    goal = params.goal
     #Compute the forcing function
-    ft = np.zeros(nSteps,2)
-    for z in q :
-        ydd = qdd[z,:] 
-        yd = qd[z,:] 
-        y = q[z,:] 
-        ft[z,:] = ydd/(tau^2) - alpha * ( beta * ( no.transpose(goal) - y) - ( yd / tau ))     
+    ft = np.zeros((nSteps,2))
+    ydd = np.zeros((2, 1))
+    yd = np.zeros((2, 1))
+    y = np.zeros((2, 1))
+    for z in range(0,nSteps-1) :
+        ydd[0] = qdd[0][z]
+        ydd[1] = qdd[1][z]
+        yd[0] = qd[0][z]
+        yd[1] = qd[1][z]
+        y[0] = q[0][z]
+        y[1] = q[1][z]
+        temp = ydd/(tau*tau) - np.transpose(alpha * (beta * np.subtract(goal, np.transpose(y)))) - (np.divide(yd, tau))
+        ft[z, 0] = temp[0]
+        ft[z, 1] = temp[1]
+
 
     #Learn the weights
-    params.w = (np.transpose(Phi) * Phi )/ (np.transpose(Phi) * ft) 
+    params.w = np.matmul((np.matmul(np.transpose(Phi), Phi)),np.transpose(np.linalg.pinv((np.matmul(np.transpose(Phi), ft)))))
 
     return params
