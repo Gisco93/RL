@@ -9,7 +9,6 @@
 import numpy as np
 
 def dmpCtl (dmpParams, psi_i, q, qd):
-    print np.transpose(dmpParams.goal)
     alpha = dmpParams.alpha
     beta = dmpParams.beta
     tau = dmpParams.tau
@@ -17,7 +16,6 @@ def dmpCtl (dmpParams, psi_i, q, qd):
     w = dmpParams.w
 
     KD = tau * tau * alpha * beta
-    KP = alpha/tau
-
+    KP = alpha * tau
     qdd = KD * (goal - q) - KP * qd + (tau * tau) * np.matmul(psi_i, w)
     return qdd

@@ -11,6 +11,7 @@
 from getDMPBasis import *
 import numpy as np
 
+
 class dmpParams():
     def __init__(self):
         self.alphaz = 0.0
@@ -22,43 +23,43 @@ class dmpParams():
         self.goal = 0.0
         self.w = 0.0
 
-def dmpTrain (q, qd, qdd, dt, nSteps):
+
+def dmpTrain(q, qd, qdd, dt, nSteps):
 
     params = dmpParams()
-    #Set dynamic system parameters
+    # Set dynamic system parameters
     params.alphaz = 3 / (dt*nSteps)
-    params.alpha  = 25
-    params.beta	 = 6.25
-    params.Ts     = (dt*nSteps)
-    params.tau    = 1
+    params.alpha = 25
+    params.beta = 6.25
+    params.Ts = (dt*nSteps)
+    params.tau = 1
     params.nBasis = 50
-    params.goal   = np.transpose(q[:,-1])
+    params.goal = np.transpose(q)
 
     Phi = getDMPBasis(params, dt, nSteps)
 
-    #shorthand f o r parameters
+    # shorthand for parameters
     tau = params.tau 
     alpha = params.alpha 
     beta = params.beta 
     goal = params.goal
-    #Compute the forcing function
-    ft = np.zeros((nSteps,2))
+    # Compute the forcing function
+    ft = np.zeros((nSteps, 2))
     ydd = np.zeros((2, 1))
     yd = np.zeros((2, 1))
     y = np.zeros((2, 1))
-    for z in range(0,nSteps-1) :
+    for z in range(0, nSteps-2):
         ydd[0] = qdd[0][z]
         ydd[1] = qdd[1][z]
         yd[0] = qd[0][z]
         yd[1] = qd[1][z]
         y[0] = q[0][z]
         y[1] = q[1][z]
-        temp = ydd/(tau*tau) - np.transpose(alpha * (beta * np.subtract(goal, np.transpose(y)))) - (np.divide(yd, tau))
+        temp = ydd/(tau*tau) - np.transpose(alpha * (beta * np.subtract(goal[z+1], np.transpose(y)))) - (np.divide(yd, tau))
         ft[z, 0] = temp[0]
         ft[z, 1] = temp[1]
 
-
-    #Learn the weights
-    params.w = np.matmul((np.matmul(np.transpose(Phi), Phi)),np.transpose(np.linalg.pinv((np.matmul(np.transpose(Phi), ft)))))
+    # Learn the weights
+    params.w = np.matmul((np.matmul(Phi.transpose(), Phi)), np.linalg.pinv((np.matmul(Phi.transpose(), ft))).transpose())
 
     return params
