@@ -44,7 +44,7 @@ and write down how the following quantities $K_p, K_d, y^{des}_z$ and $\dot{y}_z
 
 \begin{answer}
 \begin{align*}
-	\ddot{y}_{z} & = \tau^2\alpha\beta\cdot (g-y) + \frac{\alpha}{\tau}\cdot(0-\dot{y}) + \tau^2 f_{w}(z)\\
+	\ddot{y}_{z} & = \tau^2\alpha\beta\cdot (g-y) + \alpha\cdot\tau\cdot(0-\dot{y}) + \tau^2 f_{w}(z)\\
 	K_p & = \tau^2\alpha\beta\\
 	K_d & = \alpha \cdot \tau\\
 	y_{z}^{des} & = g\\
@@ -59,7 +59,9 @@ and write down how the following quantities $K_p, K_d, y^{des}_z$ and $\dot{y}_z
 \begin{question}{Stability}{2}
 Show why the DMPs are stable when $t\to\infty$ and what would the equilibrium point be.
 
-\begin{answer}\end{answer}
+\begin{answer}
+	A high t means our forcing function goes to zero. This leaves us with a PD-controller that only controls $\ddot{y}_{z}$ to compensate for gravity. The equilibrium point would be at $y_{z}^{des}$ which is $g$.
+\end{answer}
 
 \end{question}
 
