@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.12.8)  16 JAN 2017 16:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.12.8)  18 JAN 2017 21:11
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -802,32 +802,57 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfig@top=\skip125
 \subfig@bottom=\skip126
 )
+(/usr/share/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count126
+\lst@gtempboxa=\box62
+\lst@token=\toks27
+\lst@length=\count127
+\lst@currlwidth=\dimen147
+\lst@column=\count128
+\lst@pos=\count129
+\lst@lostspace=\dimen148
+\lst@width=\dimen149
+\lst@newlines=\count130
+\lst@lineno=\count131
+\lst@maxwidth=\dimen150
+
+(/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count132
+\lst@skipnumbers=\count133
+\lst@framebox=\box63
+)
+(/usr/share/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
 (/usr/share/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2016/04/27 v1.618033 publication quality tables
-\heavyrulewidth=\dimen147
-\lightrulewidth=\dimen148
-\cmidrulewidth=\dimen149
-\belowrulesep=\dimen150
-\belowbottomsep=\dimen151
-\aboverulesep=\dimen152
-\abovetopsep=\dimen153
-\cmidrulesep=\dimen154
-\cmidrulekern=\dimen155
-\defaultaddspace=\dimen156
-\@cmidla=\count126
-\@cmidlb=\count127
-\@aboverulesep=\dimen157
-\@belowrulesep=\dimen158
-\@thisruleclass=\count128
-\@lastruleclass=\count129
-\@thisrulewidth=\dimen159
+\heavyrulewidth=\dimen151
+\lightrulewidth=\dimen152
+\cmidrulewidth=\dimen153
+\belowrulesep=\dimen154
+\belowbottomsep=\dimen155
+\aboverulesep=\dimen156
+\abovetopsep=\dimen157
+\cmidrulesep=\dimen158
+\cmidrulekern=\dimen159
+\defaultaddspace=\dimen160
+\@cmidla=\count134
+\@cmidlb=\count135
+\@aboverulesep=\dimen161
+\@belowrulesep=\dimen162
+\@thisruleclass=\count136
+\@lastruleclass=\count137
+\@thisrulewidth=\dimen163
 )
 (/usr/share/texmf-dist/tex/latex/fancyref/fancyref.sty
 Package: fancyref 1999/02/03 v0.9c Fancy cross-referencing
 
 (/usr/share/texmf-dist/tex/latex/tools/varioref.sty
 Package: varioref 2016/02/16 v1.5c package for extended references (FMi)
-\c@vrcnt=\count130
+\c@vrcnt=\count138
 ))
 (/usr/share/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2016/04/23 3.9r The Babel package
@@ -840,8 +865,8 @@ Language: ngermanb 2016/11/02 v2.9 German support for babel (new orthography)
 
 (/usr/share/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2016/04/23 3.9r Babel common definitions
-\babel@savecnt=\count131
-\U@D=\dimen160
+\babel@savecnt=\count139
+\U@D=\dimen164
 )
 Package babel Info: Making " an active character on input line 125.
 ))
@@ -858,31 +883,6 @@ Package: iasHomework 2016/06/21 3.2
 \CommentStream=\write3
 
 Excluding comment 'comment')
-(/usr/share/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count132
-\lst@gtempboxa=\box62
-\lst@token=\toks27
-\lst@length=\count133
-\lst@currlwidth=\dimen161
-\lst@column=\count134
-\lst@pos=\count135
-\lst@lostspace=\dimen162
-\lst@width=\dimen163
-\lst@newlines=\count136
-\lst@lineno=\count137
-\lst@maxwidth=\dimen164
-
-(/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count138
-\lst@skipnumbers=\count139
-\lst@framebox=\box63
-)
-(/usr/share/texmf-dist/tex/latex/listings/listings.cfg
-File: listings.cfg 2015/06/04 1.6 listings configuration
-))
-Package: listings 2015/06/04 1.6 (Carsten Heinz)
-
 (/usr/share/texmf-dist/tex/latex/environ/environ.sty
 Package: environ 2014/05/04 v0.3 A new way to define environments
 
@@ -1106,42 +1106,42 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 27.
 ) (./homework.aux)
 \openout1 = `homework.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for MDA/cmr/m/n on input line 56.
-LaTeX Font Info:    Try loading font information for MDA+cmr on input line 56.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for MDA/cmr/m/n on input line 57.
+LaTeX Font Info:    Try loading font information for MDA+cmr on input line 57.
 
 (/usr/share/texmf-dist/tex/latex/mathdesign/mdacmr.fd
 File: mdacmr.fd 
 )
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for MDB/cmr/m/n on input line 56.
-LaTeX Font Info:    Try loading font information for MDB+cmr on input line 56.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for MDB/cmr/m/n on input line 57.
+LaTeX Font Info:    Try loading font information for MDB+cmr on input line 57.
 
 (/usr/share/texmf-dist/tex/latex/mathdesign/mdbcmr.fd
 File: mdbcmr.fd 
 )
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Try loading font information for T1+5ch on input line 56.
-LaTeX Font Info:    No file T15ch.fd. on input line 56.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Try loading font information for T1+5ch on input line 57.
+LaTeX Font Info:    No file T15ch.fd. on input line 57.
 
 
 LaTeX Font Warning: Font shape `T1/5ch/m/n' undefined
-(Font)              using `T1/cmr/m/n' instead on input line 56.
+(Font)              using `T1/cmr/m/n' instead on input line 57.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1210,7 +1210,7 @@ e
 
 \TUD@part@topskip=\skip128
 \c@lstlisting=\count170
-Package hyperref Info: Link coloring ON on input line 56.
+Package hyperref Info: Link coloring ON on input line 57.
 (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
@@ -1220,15 +1220,15 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 \c@section@level=\count171
 LaTeX Info: Redefining \Ref on input line 515.
 )
-LaTeX Info: Redefining \ref on input line 56.
-LaTeX Info: Redefining \pageref on input line 56.
-LaTeX Info: Redefining \nameref on input line 56.
+LaTeX Info: Redefining \ref on input line 57.
+LaTeX Info: Redefining \pageref on input line 57.
+LaTeX Info: Redefining \nameref on input line 57.
 
 (./homework.out) (./homework.out)
 \@outlinefile=\write4
 \openout4 = `homework.out'.
 
-LaTeX Info: Redefining \Ref on input line 56.
+LaTeX Info: Redefining \Ref on input line 57.
  ABD: EveryShipout initializing macros
 \@TUD@tmp@baselineskip=\skip129
 \TUD@logoheight=\skip130
@@ -1238,17 +1238,17 @@ LaTeX Info: Redefining \Ref on input line 56.
 <tud_logo.pdf, id=12, 157.58875pt x 63.23625pt>
 File: tud_logo.pdf Graphic file (type pdf)
  <use tud_logo.pdf>
-Package pdftex.def Info: tud_logo.pdf used on input line 61.
+Package pdftex.def Info: tud_logo.pdf used on input line 62.
 (pdftex.def)             Requested size: 134.92238pt x 62.59605pt.
 File: tud_logo.pdf Graphic file (type pdf)
 
 <use tud_logo.pdf>
-Package pdftex.def Info: tud_logo.pdf used on input line 61.
+Package pdftex.def Info: tud_logo.pdf used on input line 62.
 (pdftex.def)             Requested size: 134.92238pt x 62.59605pt.
 \TUD@logobox=\box68
 File: tud_logo.pdf Graphic file (type pdf)
  <use tud_logo.pdf>
-Package pdftex.def Info: tud_logo.pdf used on input line 61.
+Package pdftex.def Info: tud_logo.pdf used on input line 62.
 (pdftex.def)             Requested size: 134.92238pt x 62.59605pt.
 \TUD@logoboxsep=\skip133
 \TUD@logoboxsep@tmp=\skip134
@@ -1261,106 +1261,106 @@ Package pdftex.def Info: tud_logo.pdf used on input line 61.
 \@TUD@logolines=\count172
 \@TUD@logo@tmp=\dimen184
 \TUD@titleskip=\skip138
-LaTeX Font Info:    Try loading font information for T1+5fp on input line 61.
-LaTeX Font Info:    No file T15fp.fd. on input line 61.
+LaTeX Font Info:    Try loading font information for T1+5fp on input line 62.
+LaTeX Font Info:    No file T15fp.fd. on input line 62.
 
 
 LaTeX Font Warning: Font shape `T1/5fp/mb/n' undefined
-(Font)              using `T1/cmr/m/n' instead on input line 61.
+(Font)              using `T1/cmr/m/n' instead on input line 62.
 
-LaTeX Font Info:    Try loading font information for OT1+mdbch on input line 61
+LaTeX Font Info:    Try loading font information for OT1+mdbch on input line 62
 .
 (/usr/share/texmf-dist/tex/latex/mathdesign/mdbch/ot1mdbch.fd
 File: ot1mdbch.fd 2013/08/29 Fontinst v1.933 font definitions for OT1/mdbch.
 )
 LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 9.50406pt on input line 61.
+(Font)              scaled to size 9.50406pt on input line 62.
 LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 6.62404pt on input line 61.
+(Font)              scaled to size 6.62404pt on input line 62.
 LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 5.66403pt on input line 61.
-LaTeX Font Info:    Try loading font information for OML+mdbch on input line 61
+(Font)              scaled to size 5.66403pt on input line 62.
+LaTeX Font Info:    Try loading font information for OML+mdbch on input line 62
 .
 
 (/usr/share/texmf-dist/tex/latex/mathdesign/mdbch/omlmdbch.fd
 File: omlmdbch.fd 2013/08/29 Fontinst v1.933 font definitions for OML/mdbch.
 )
 LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 9.50406pt on input line 61.
+(Font)              scaled to size 9.50406pt on input line 62.
 LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 6.62404pt on input line 61.
+(Font)              scaled to size 6.62404pt on input line 62.
 LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 5.66403pt on input line 61.
-LaTeX Font Info:    Try loading font information for OMS+mdbch on input line 61
+(Font)              scaled to size 5.66403pt on input line 62.
+LaTeX Font Info:    Try loading font information for OMS+mdbch on input line 62
 .
 
 (/usr/share/texmf-dist/tex/latex/mathdesign/mdbch/omsmdbch.fd
 File: omsmdbch.fd 2013/08/29 Fontinst v1.933 font definitions for OMS/mdbch.
 )
 LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 9.50406pt on input line 61.
+(Font)              scaled to size 9.50406pt on input line 62.
 LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 6.62404pt on input line 61.
+(Font)              scaled to size 6.62404pt on input line 62.
 LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 5.66403pt on input line 61.
-LaTeX Font Info:    Try loading font information for OMX+mdbch on input line 61
+(Font)              scaled to size 5.66403pt on input line 62.
+LaTeX Font Info:    Try loading font information for OMX+mdbch on input line 62
 .
 
 (/usr/share/texmf-dist/tex/latex/mathdesign/mdbch/omxmdbch.fd
 File: omxmdbch.fd 2013/08/29 Fontinst v1.933 font definitions for OMX/mdbch.
 )
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 9.50406pt on input line 61.
+(Font)              scaled to size 9.50406pt on input line 62.
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 6.62404pt on input line 61.
+(Font)              scaled to size 6.62404pt on input line 62.
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 5.66403pt on input line 61.
+(Font)              scaled to size 5.66403pt on input line 62.
 LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 9.50406pt on input line 61.
+(Font)              scaled to size 9.50406pt on input line 62.
 LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 6.62404pt on input line 61.
+(Font)              scaled to size 6.62404pt on input line 62.
 LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 5.66403pt on input line 61.
-LaTeX Font Info:    Try loading font information for MDA+mdbch on input line 61
+(Font)              scaled to size 5.66403pt on input line 62.
+LaTeX Font Info:    Try loading font information for MDA+mdbch on input line 62
 .
 
 (/usr/share/texmf-dist/tex/latex/mathdesign/mdbch/mdamdbch.fd
 File: mdamdbch.fd 2013/08/29 Fontinst v1.933 font definitions for MDA/mdbch.
 )
 LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 9.50406pt on input line 61.
+(Font)              scaled to size 9.50406pt on input line 62.
 LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 6.62404pt on input line 61.
+(Font)              scaled to size 6.62404pt on input line 62.
 LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 5.66403pt on input line 61.
-LaTeX Font Info:    Try loading font information for MDB+mdbch on input line 61
+(Font)              scaled to size 5.66403pt on input line 62.
+LaTeX Font Info:    Try loading font information for MDB+mdbch on input line 62
 .
 
 (/usr/share/texmf-dist/tex/latex/mathdesign/mdbch/mdbmdbch.fd
 File: mdbmdbch.fd 2013/08/29 Fontinst v1.933 font definitions for MDB/mdbch.
 )
 LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 9.50406pt on input line 61.
+(Font)              scaled to size 9.50406pt on input line 62.
 LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 6.62404pt on input line 61.
+(Font)              scaled to size 6.62404pt on input line 62.
 LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 5.66403pt on input line 61.
-LaTeX Font Info:    Try loading font information for OML+mdput on input line 61
+(Font)              scaled to size 5.66403pt on input line 62.
+LaTeX Font Info:    Try loading font information for OML+mdput on input line 62
 .
 
 (/usr/share/texmf-dist/tex/latex/mathdesign/mdput/omlmdput.fd
 File: omlmdput.fd 2013/08/29 Fontinst v1.933 font definitions for OML/mdput.
 )
 LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
-(Font)              scaled to size 9.30602pt on input line 61.
+(Font)              scaled to size 9.30602pt on input line 62.
 LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
-(Font)              scaled to size 6.48601pt on input line 61.
+(Font)              scaled to size 6.48601pt on input line 62.
 LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
-(Font)              scaled to size 5.546pt on input line 61.
+(Font)              scaled to size 5.546pt on input line 62.
 
 
 LaTeX Font Warning: Font shape `T1/5fp/m/n' undefined
-(Font)              using `T1/cmr/m/n' instead on input line 61.
+(Font)              using `T1/cmr/m/n' instead on input line 62.
 
 \TUD@titleboxheight=\skip139
 \TUD@titleboxdepth=\skip140
@@ -1373,7 +1373,7 @@ LaTeX Font Warning: Font shape `T1/5fp/m/n' undefined
 \@TUD@logobox@posy=\skip147
 
 LaTeX Font Warning: Font shape `T1/5ch/b/n' undefined
-(Font)              using `T1/5ch/m/n' instead on input line 68.
+(Font)              using `T1/5ch/m/n' instead on input line 69.
 
 (./model_learning.tex
 LaTeX Font Info:    Try loading font information for T1+txtt on input line 18.
@@ -1462,13 +1462,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 117--117
 
 \height=\dimen188
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--128
+Underfull \hbox (badness 10000) in paragraph at lines 129--129
 
  []
 
 \height=\dimen189
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--150
+Underfull \hbox (badness 10000) in paragraph at lines 151--151
 
  []
 
@@ -1476,71 +1476,71 @@ Underfull \hbox (badness 10000) in paragraph at lines 150--150
 <ML/first_joint.png, id=39, 578.16pt x 433.62pt>
 File: ML/first_joint.png Graphic file (type png)
  <use ML/first_joint.png>
-Package pdftex.def Info: ML/first_joint.png used on input line 150.
+Package pdftex.def Info: ML/first_joint.png used on input line 151.
 (pdftex.def)             Requested size: 247.53897pt x 185.65236pt.
 
 <ML/second_joint.png, id=41, 578.16pt x 433.62pt>
 File: ML/second_joint.png Graphic file (type png)
  <use ML/second_joint.png>
-Package pdftex.def Info: ML/second_joint.png used on input line 150.
+Package pdftex.def Info: ML/second_joint.png used on input line 151.
 (pdftex.def)             Requested size: 247.53897pt x 185.65236pt.
 
 <ML/third_joint.png, id=42, 578.16pt x 433.62pt>
 File: ML/third_joint.png Graphic file (type png)
  <use ML/third_joint.png>
-Package pdftex.def Info: ML/third_joint.png used on input line 150.
+Package pdftex.def Info: ML/third_joint.png used on input line 151.
 (pdftex.def)             Requested size: 247.53897pt x 185.65236pt.
 
-Overfull \hbox (24.2216pt too wide) in paragraph at lines 150--150
+Overfull \hbox (24.2216pt too wide) in paragraph at lines 151--151
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--150
+Underfull \hbox (badness 10000) in paragraph at lines 151--151
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--150
+Underfull \hbox (badness 10000) in paragraph at lines 151--151
 
  []
 
 File: ML/first_joint.png Graphic file (type png)
 <use ML/first_joint.png>
-Package pdftex.def Info: ML/first_joint.png used on input line 150.
+Package pdftex.def Info: ML/first_joint.png used on input line 151.
 (pdftex.def)             Requested size: 247.53897pt x 185.65236pt.
 File: ML/second_joint.png Graphic file (type png)
  <use ML/second_joint.png>
-Package pdftex.def Info: ML/second_joint.png used on input line 150.
+Package pdftex.def Info: ML/second_joint.png used on input line 151.
 (pdftex.def)             Requested size: 247.53897pt x 185.65236pt.
 File: ML/third_joint.png Graphic file (type png)
  <use ML/third_joint.png>
-Package pdftex.def Info: ML/third_joint.png used on input line 150.
+Package pdftex.def Info: ML/third_joint.png used on input line 151.
 (pdftex.def)             Requested size: 247.53897pt x 185.65236pt.
 
-Overfull \hbox (26.69897pt too wide) in paragraph at lines 150--150
+Overfull \hbox (26.69897pt too wide) in paragraph at lines 151--151
 [][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--150
+Underfull \hbox (badness 10000) in paragraph at lines 151--151
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 150--150
+Underfull \hbox (badness 10000) in paragraph at lines 151--151
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 164--164
+Underfull \hbox (badness 10000) in paragraph at lines 165--165
 
  []
 
 \height=\dimen191
 
 LaTeX Font Warning: Font shape `T1/5ch/b/it' undefined
-(Font)              using `T1/5ch/b/n' instead on input line 164.
+(Font)              using `T1/5ch/b/n' instead on input line 165.
 
 [3 <./ML/first_joint.png> <./ML/second_joint.png> <./ML/third_joint.png>])
 (./trajectory_generation.tex
@@ -1550,97 +1550,460 @@ Underfull \hbox (badness 10000) in paragraph at lines 55--55
 
 \height=\dimen192
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--64
+Underfull \hbox (badness 10000) in paragraph at lines 66--66
 
  []
 
 [4]
 \height=\dimen193
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--75
+Underfull \hbox (badness 10000) in paragraph at lines 84--84
 
  []
 
 \height=\dimen194
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 88--88
+<python/figures/figure_1.png, id=67, 578.16pt x 433.62pt>
+File: python/figures/figure_1.png Graphic file (type png)
+
+<use python/figures/figure_1.png>
+Package pdftex.def Info: python/figures/figure_1.png used on input line 84.
+(pdftex.def)             Requested size: 247.53897pt x 185.65236pt.
+
+<python/figures/figure_2.png, id=68, 578.16pt x 433.62pt>
+File: python/figures/figure_2.png Graphic file (type png)
+
+<use python/figures/figure_2.png>
+Package pdftex.def Info: python/figures/figure_2.png used on input line 84.
+(pdftex.def)             Requested size: 247.53897pt x 185.65236pt.
+LaTeX Font Info:    Font shape `T1/txtt/m/it' in size <9.5> not available
+(Font)              Font shape `T1/txtt/m/sl' tried instead on input line 84.
+
+(/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+Overfull \hbox (24.2216pt too wide) in paragraph at lines 84--84
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--84
+
+ []
+
+(./python/dmpCtl.py
+LaTeX Font Info:    Try loading font information for TS1+5ch on input line 18.
+LaTeX Font Info:    No file TS15ch.fd. on input line 18.
+
+
+LaTeX Font Warning: Font shape `TS1/5ch/m/it' undefined
+(Font)              using `TS1/cmr/m/n' instead
+(Font)              for symbol `textasteriskcentered' on input line 18.
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 84--84
+
+ []
+
+(./python/dmpTrain.py
+Overfull \hbox (226.42873pt too wide) in paragraph at lines 58--59
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (214.71483pt too wide) in paragraph at lines 63--65
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][] 
+ []
+
+) [5]
+File: python/figures/figure_1.png Graphic file (type png)
+ <use python/figures/figure_1.png>
+Package pdftex.def Info: python/figures/figure_1.png used on input line 84.
+(pdftex.def)             Requested size: 247.53897pt x 185.65236pt.
+File: python/figures/figure_2.png Graphic file (type png)
+ <use python/figures/figure_2.png>
+Package pdftex.def Info: python/figures/figure_2.png used on input line 84.
+(pdftex.def)             Requested size: 247.53897pt x 185.65236pt.
+
+Overfull \hbox (26.69897pt too wide) in paragraph at lines 84--84
+[][] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--84
+
+ []
+
+(./python/dmpCtl.py)
+Underfull \hbox (badness 10000) in paragraph at lines 84--84
+
+ []
+
+(./python/dmpTrain.py [6 <./python/figures/figure_1.png> <./python/figures/figu
+re_2.png>]
+Overfull \hbox (226.42873pt too wide) in paragraph at lines 58--59
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (214.71483pt too wide) in paragraph at lines 63--65
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][] 
+ []
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 100--100
 
  []
 
 \height=\dimen195
+<python/figures/figure_3.png, id=112, 578.16pt x 433.62pt>
+File: python/figures/figure_3.png Graphic file (type png)
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--98
+<use python/figures/figure_3.png>
+Package pdftex.def Info: python/figures/figure_3.png used on input line 100.
+(pdftex.def)             Requested size: 247.53897pt x 185.65236pt.
+
+<python/figures/figure_4.png, id=113, 578.16pt x 433.62pt>
+File: python/figures/figure_4.png Graphic file (type png)
+
+<use python/figures/figure_4.png>
+Package pdftex.def Info: python/figures/figure_4.png used on input line 100.
+(pdftex.def)             Requested size: 247.53897pt x 185.65236pt.
+
+Overfull \hbox (24.2216pt too wide) in paragraph at lines 100--100
+[] [] 
+ []
+
+File: python/figures/figure_3.png Graphic file (type png)
+<use python/figures/figure_3.png>
+Package pdftex.def Info: python/figures/figure_3.png used on input line 100.
+(pdftex.def)             Requested size: 247.53897pt x 185.65236pt.
+File: python/figures/figure_4.png Graphic file (type png)
+ <use python/figures/figure_4.png>
+Package pdftex.def Info: python/figures/figure_4.png used on input line 100.
+(pdftex.def)             Requested size: 247.53897pt x 185.65236pt.
+
+Overfull \hbox (26.69897pt too wide) in paragraph at lines 100--100
+[][] [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 113--113
 
  []
 
+[7 <./python/figures/figure_3.png> <./python/figures/figure_4.png>]
 \height=\dimen196
 
-Underfull \hbox (badness 10000) in paragraph at lines 109--109
+<python/figures/figure_5.png, id=152, 578.16pt x 433.62pt>
+File: python/figures/figure_5.png Graphic file (type png)
 
+<use python/figures/figure_5.png>
+Package pdftex.def Info: python/figures/figure_5.png used on input line 113.
+(pdftex.def)             Requested size: 247.53897pt x 185.65236pt.
+
+<python/figures/figure_6.png, id=153, 578.16pt x 433.62pt>
+File: python/figures/figure_6.png Graphic file (type png)
+
+<use python/figures/figure_6.png>
+Package pdftex.def Info: python/figures/figure_6.png used on input line 113.
+(pdftex.def)             Requested size: 247.53897pt x 185.65236pt.
+
+Overfull \hbox (24.2216pt too wide) in paragraph at lines 113--113
+[] [] 
  []
 
-\height=\dimen197
+File: python/figures/figure_5.png Graphic file (type png)
+<use python/figures/figure_5.png>
+Package pdftex.def Info: python/figures/figure_5.png used on input line 113.
+(pdftex.def)             Requested size: 247.53897pt x 185.65236pt.
+File: python/figures/figure_6.png Graphic file (type png)
+ <use python/figures/figure_6.png>
+Package pdftex.def Info: python/figures/figure_6.png used on input line 113.
+(pdftex.def)             Requested size: 247.53897pt x 185.65236pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 118--118
-
+Overfull \hbox (26.69897pt too wide) in paragraph at lines 113--113
+[][] [] 
  []
 
-\height=\dimen198
 
 Underfull \hbox (badness 10000) in paragraph at lines 127--127
 
  []
 
-\height=\dimen199
+\height=\dimen197
+<python/figures/figure_7-basisfunctions.png, id=154, 578.16pt x 433.62pt>
+File: python/figures/figure_7-basisfunctions.png Graphic file (type png)
 
-Underfull \hbox (badness 10000) in paragraph at lines 140--140
+<use python/figures/figure_7-basisfunctions.png>
+Package pdftex.def Info: python/figures/figure_7-basisfunctions.png used on inp
+ut line 127.
+(pdftex.def)             Requested size: 483.69684pt x 362.76945pt.
+
+Overfull \hbox (10.67128pt too wide) in paragraph at lines 127--127
+[] 
+ []
+
+(./python/getProMPBasis.py
+Overfull \hbox (167.85924pt too wide) in paragraph at lines 14--15
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+)
+File: python/figures/figure_7-basisfunctions.png Graphic file (type png)
+ <use python/figures/figure_7-basisfunctions.png>
+Package pdftex.def Info: python/figures/figure_7-basisfunctions.png used on inp
+ut line 127.
+(pdftex.def)             Requested size: 483.69684pt x 362.76945pt.
+
+Overfull \hbox (13.14865pt too wide) in paragraph at lines 127--127
+[][] 
+ []
+
+[8 <./python/figures/figure_5.png> <./python/figures/figure_6.png>]
+(./python/getProMPBasis.py
+Overfull \hbox (167.85924pt too wide) in paragraph at lines 14--15
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[9 <./python/figures/figure_7-basisfunctions.png>])
+Underfull \hbox (badness 10000) in paragraph at lines 139--139
+
+ []
+
+\height=\dimen198
+<python/figures/figure_8-trajectories.png, id=183, 578.16pt x 433.62pt>
+File: python/figures/figure_8-trajectories.png Graphic file (type png)
+
+<use python/figures/figure_8-trajectories.png>
+Package pdftex.def Info: python/figures/figure_8-trajectories.png used on input
+ line 139.
+(pdftex.def)             Requested size: 483.69684pt x 362.76945pt.
+
+Overfull \hbox (10.67128pt too wide) in paragraph at lines 139--139
+[] 
+ []
+
+(./python/proMP.py
+Overfull \hbox (460.70668pt too wide) in paragraph at lines 18--19
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (1175.25444pt too wide) in paragraph at lines 23--24
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+] 
+ []
+
+)
+File: python/figures/figure_8-trajectories.png Graphic file (type png)
+ <use python/figures/figure_8-trajectories.png>
+Package pdftex.def Info: python/figures/figure_8-trajectories.png used on input
+ line 139.
+(pdftex.def)             Requested size: 483.69684pt x 362.76945pt.
+
+Overfull \hbox (13.14865pt too wide) in paragraph at lines 139--139
+[][] 
+ []
+
+(./python/proMP.py [10]
+Overfull \hbox (460.70668pt too wide) in paragraph at lines 18--19
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[11 <./python/figures/figure_8-trajectories.png>]
+Overfull \hbox (1175.25444pt too wide) in paragraph at lines 23--24
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+] 
+ []
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 154--154
+
+ []
+
+\height=\dimen199
+<python/figures/figure_9-trajectoriesN20.png, id=214, 578.16pt x 433.62pt>
+File: python/figures/figure_9-trajectoriesN20.png Graphic file (type png)
+
+<use python/figures/figure_9-trajectoriesN20.png>
+Package pdftex.def Info: python/figures/figure_9-trajectoriesN20.png used on in
+put line 154.
+(pdftex.def)             Requested size: 247.53897pt x 185.65236pt.
+
+<python/figures/figure_10-trajectoriesN10.png, id=215, 578.16pt x 433.62pt>
+File: python/figures/figure_10-trajectoriesN10.png Graphic file (type png)
+
+<use python/figures/figure_10-trajectoriesN10.png>
+Package pdftex.def Info: python/figures/figure_10-trajectoriesN10.png used on i
+nput line 154.
+(pdftex.def)             Requested size: 247.53897pt x 185.65236pt.
+
+Overfull \hbox (24.2216pt too wide) in paragraph at lines 154--154
+[] [] 
+ []
+
+File: python/figures/figure_9-trajectoriesN20.png Graphic file (type png)
+<use python/figures/figure_9-trajectoriesN20.png>
+Package pdftex.def Info: python/figures/figure_9-trajectoriesN20.png used on in
+put line 154.
+(pdftex.def)             Requested size: 247.53897pt x 185.65236pt.
+File: python/figures/figure_10-trajectoriesN10.png Graphic file (type png)
+
+<use python/figures/figure_10-trajectoriesN10.png>
+Package pdftex.def Info: python/figures/figure_10-trajectoriesN10.png used on i
+nput line 154.
+(pdftex.def)             Requested size: 247.53897pt x 185.65236pt.
+
+Overfull \hbox (26.69897pt too wide) in paragraph at lines 154--154
+[][] [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--170
 
  []
 
 \height=\dimen256
-[6]) [7]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 78.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 78.
+<python/figures/figure_13-conditioningN10.png, id=216, 578.16pt x 433.62pt>
+File: python/figures/figure_13-conditioningN10.png Graphic file (type png)
+
+<use python/figures/figure_13-conditioningN10.png>
+Package pdftex.def Info: python/figures/figure_13-conditioningN10.png used on i
+nput line 170.
+(pdftex.def)             Requested size: 483.69684pt x 362.76945pt.
+
+Overfull \hbox (10.67128pt too wide) in paragraph at lines 170--170
+[] 
+ []
+
+(./python/proMP.py
+Overfull \hbox (27.29247pt too wide) in paragraph at lines 38--39
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][] 
+ []
+
+
+Overfull \hbox (484.13448pt too wide) in paragraph at lines 41--42
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (1151.82664pt too wide) in paragraph at lines 47--48
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (1245.53783pt too wide) in paragraph at lines 49--50
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (173.71619pt too wide) in paragraph at lines 52--53
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+)
+File: python/figures/figure_13-conditioningN10.png Graphic file (type png)
+ <use python/figures/figure_13-conditioningN10.png>
+Package pdftex.def Info: python/figures/figure_13-conditioningN10.png used on i
+nput line 170.
+(pdftex.def)             Requested size: 483.69684pt x 362.76945pt.
+
+Overfull \hbox (13.14865pt too wide) in paragraph at lines 170--170
+[][] 
+ []
+
+[12 <./python/figures/figure_9-trajectoriesN20.png> <./python/figures/figure_10
+-trajectoriesN10.png>] (./python/proMP.py
+Overfull \hbox (27.29247pt too wide) in paragraph at lines 38--39
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][] 
+ []
+
+[13 <./python/figures/figure_13-conditioningN10.png>]
+Overfull \hbox (484.13448pt too wide) in paragraph at lines 41--42
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (1151.82664pt too wide) in paragraph at lines 47--48
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (1245.53783pt too wide) in paragraph at lines 49--50
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (173.71619pt too wide) in paragraph at lines 52--53
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+)) [14]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 79.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 79.
  (./homework.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 78.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 78.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 79.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 79.
 Package rerunfilecheck Info: File `homework.out' has not changed.
 (rerunfilecheck)             Checksum: 96AD57B1119C7FA67520CA463A9AA9CE;185.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 78.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 79.
  ) 
 Here is how much of TeX's memory you used:
- 20437 strings out of 493013
- 344921 string characters out of 6139317
- 509231 words of memory out of 5000000
- 23482 multiletter control sequences out of 15000+600000
- 48501 words of font info for 96 fonts, out of 8000000 for 9000
+ 21201 strings out of 493013
+ 354580 string characters out of 6139317
+ 579431 words of memory out of 5000000
+ 24068 multiletter control sequences out of 15000+600000
+ 49220 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 59i,13n,75p,8820b,512s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 59i,13n,81p,8820b,2065s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/t
-exmf-dist/fonts/enc/dvips/ly1/texnansi.enc}</usr/share/texmf-dist/fonts/type1/b
-itstrea/charter/bchbi8a.pfb></usr/share/texmf-dist/fonts/type1/bitstrea/charter
-/bchr8a.pfb></usr/share/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb></u
-sr/share/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chb7m.pfb></usr/shar
-e/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chbi7m.pfb></usr/share/texm
-f-dist/fonts/type1/public/mathdesign/mdbch/md-chr7m.pfb></usr/share/texmf-dist/
-fonts/type1/public/mathdesign/mdbch/md-chr7t.pfb></usr/share/texmf-dist/fonts/t
-ype1/public/mathdesign/mdbch/md-chr7v.pfb></usr/share/texmf-dist/fonts/type1/pu
-blic/mathdesign/mdbch/md-chr7y.pfb></usr/share/texmf-dist/fonts/type1/public/ma
-thdesign/mdbch/md-chri7m.pfb></usr/share/texmf-dist/fonts/type1/public/mathdesi
-gn/mdbch/md-chrma.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm06
-00.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/sh
-are/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/
-fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf-dist/fonts/type1/pub
-lic/cm-super/sfss0600.pfb></usr/share/texmf-dist/fonts/type1/public/txfonts/t1x
-tt.pfb>
-Output written on homework.pdf (7 pages, 245688 bytes).
+exmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texmf-dist/font
+s/enc/dvips/ly1/texnansi.enc}</usr/share/texmf-dist/fonts/type1/bitstrea/charte
+r/bchbi8a.pfb></usr/share/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></
+usr/share/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb></usr/share/texmf
+-dist/fonts/type1/public/mathdesign/mdbch/md-chb7m.pfb></usr/share/texmf-dist/f
+onts/type1/public/mathdesign/mdbch/md-chbi7m.pfb></usr/share/texmf-dist/fonts/t
+ype1/public/mathdesign/mdbch/md-chr7m.pfb></usr/share/texmf-dist/fonts/type1/pu
+blic/mathdesign/mdbch/md-chr7t.pfb></usr/share/texmf-dist/fonts/type1/public/ma
+thdesign/mdbch/md-chr7v.pfb></usr/share/texmf-dist/fonts/type1/public/mathdesig
+n/mdbch/md-chr7y.pfb></usr/share/texmf-dist/fonts/type1/public/mathdesign/mdbch
+/md-chri7m.pfb></usr/share/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-ch
+rma.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/s
+hare/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf-dist
+/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/pu
+blic/cm-super/sfrm1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/s
+fss0600.pfb></usr/share/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/s
+hare/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb>
+Output written on homework.pdf (14 pages, 1393728 bytes).
 PDF statistics:
- 163 PDF objects out of 1000 (max. 8388607)
- 125 compressed objects within 2 object streams
- 31 named destinations out of 1000 (max. 500000)
- 55 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 375 PDF objects out of 1000 (max. 8388607)
+ 305 compressed objects within 4 object streams
+ 163 named destinations out of 1000 (max. 500000)
+ 110 words of extra memory for PDF output out of 10000 (max. 10000000)
 

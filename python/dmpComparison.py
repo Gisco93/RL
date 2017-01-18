@@ -46,7 +46,7 @@ def dmpComparison (goals, taus, filename):
     h2 = plt.figure()
     plt.hold('on')
     p2_1, = plt.plot(sim_time, q[1, :], linewidth=2.0, label='Desired $q_2$')
-
+    
     states = simSys(states, dmpParams, dt, nSteps)
 
     plt.figure(h1.number)
@@ -59,7 +59,6 @@ def dmpComparison (goals, taus, filename):
 
     plt.legend(handles=[p2_1, p2_2], loc=0)
     dmpParamsOld = dmpParams
-
     p1_h = [0, 0]
     p2_h = [0, 0]
 
@@ -82,7 +81,7 @@ def dmpComparison (goals, taus, filename):
         plt.legend(handles=[p1_1, p1_2, p1_h[0], p1_h[1]], loc=0)
         plt.figure(h2.number)
         plt.legend(handles=[p2_1, p2_2, p2_h[0], p2_h[1]], loc=0)
-
+        
     dmpParams = dmpParamsOld
 
     if taus != []:
@@ -102,3 +101,7 @@ def dmpComparison (goals, taus, filename):
         plt.legend(handles=[p1_1, p1_2, p1_h[0], p1_h[1]], loc=0)
         plt.figure(h2.number)
         plt.legend(handles=[p2_1, p2_2, p2_h[0], p2_h[1]], loc=0)
+
+
+       
+     

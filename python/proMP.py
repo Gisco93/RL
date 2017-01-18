@@ -15,19 +15,11 @@ def proMP (nBasis):
 
     bandwidth = 0.2
     Phi = getProMPBasis(dt, nSteps, nBasis, bandwidth)
-    print Phi.shape
-    print q.shape
-    # TODO find away to compute var^2 or leave it at 1 .... should be var^2 * np.eye(1499)
     w = np.matmul(np.matmul(np.linalg.inv(np.matmul(Phi.transpose(), Phi) + (bandwidth*bandwidth) * np.eye(1499)), Phi.transpose()).transpose(), q.transpose())
     mean_w = np.mean(w.transpose(), axis=0)
     cov_w = np.cov(w)
-    print w.shape
-    print mean_w.shape
-    print cov_w.shape
     plt.figure()
     plt.hold('on')
-    print np.max(np.dot(Phi.transpose(), mean_w) + np.mean(q,axis=0))
-    print np.max(2*np.sqrt(np.diag(np.dot(Phi.transpose(), np.dot(cov_w, Phi)))))
     plt.fill_between(time, np.dot(Phi.transpose(), mean_w) - 2 * np.sqrt(np.diag(np.dot(Phi.transpose(), np.dot(cov_w, Phi)))), np.dot(Phi.transpose(), mean_w) + 2 * np.sqrt(np.diag(np.dot(Phi.transpose(), np.dot(cov_w, Phi)))), alpha=0.5, edgecolor='#1B2ACC', facecolor='#089FFF')
     plt.plot(time, np.dot(Phi.transpose(), mean_w), color='#1B2ACC')
     plt.plot(time, q.transpose())
@@ -49,9 +41,6 @@ def proMP (nBasis):
     w_new = np.matmul(np.matmul(np.linalg.inv(np.matmul(Phi.transpose(), Phi) + (bandwidth*bandwidth) * np.eye(1499)), Phi.transpose()).transpose(), q.transpose())
     mean_w_new = np.mean(w_new.transpose(), axis=0)
     cov_w_new = np.cov(w_new)
-    print w_new.shape
-    print mean_w_new.shape
-    print cov_w_new.shape
 
     plt.figure()
     plt.hold('on')

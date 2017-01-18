@@ -72,7 +72,14 @@ Implement the DMPs and test them on the double pendulum environment.
 In order to train the DMPs you have to solve Equation~\eqref{eq:dmp} on the forcing function. Before starting the execution, set the goal $g$ position to be the same as in the demonstration. Then, set the parameters to $\alpha=25, \beta=6.25, \alpha_z=3/T, \tau=1$. Use $N=50$ basis functions, equally distributed in $z$.  Use the learned DMPs to control the robot and plot in the same figure both the demonstrated trajectory and the reproduction from the DMPs.
 You need to implement the DMP-based controller (\texttt{dmpCtl.py}) and the training function for the controller parameters (\texttt{dmpTrain.py}). To plot your results you can use \texttt{dmpComparison.py}. Refer to \texttt{example.py} to see how to call it. Attach a snippet of your code.
 
-\begin{answer}\end{answer}
+\begin{answer}
+\includegraphics[width=87mm]{python/figures/figure_1.png}
+\includegraphics[width=87mm]{python/figures/figure_2.png}
+\texttt{the control code:}\\
+\lstinputlisting[language=Python, firstline=11,lastline=21]{python/dmpCtl.py}
+\texttt{the training code:}\\
+\lstinputlisting[language=Python, firstline=27,lastline=65]{python/dmpTrain.py}
+\end{answer}
 
 \end{question}
 
@@ -84,7 +91,10 @@ You need to implement the DMP-based controller (\texttt{dmpCtl.py}) and the trai
 Using the trained DMPs from the previous question, simulate the system with different goal positions: first with $q_{t=\mathrm{end}} = \{0, 0.2\}$ and then with $q_{t=\mathrm{end}} = \{0.8, 0.5\}$. Generate one figure per DoF. In each figure, plot the demonstrated trajectory and the reproduced trajectories with different goal positions.
 How do you interpret the result? 
 
-\begin{answer}\end{answer}
+\begin{answer}
+\includegraphics[width=87mm]{python/figures/figure_3.png}
+\includegraphics[width=87mm]{python/figures/figure_4.png}
+\end{answer}
 
 
 \end{question}
@@ -94,7 +104,10 @@ How do you interpret the result?
 \begin{question}{Double Pendulum - Temporal Modulation}{3}
 Using the trained DMPs from the previous question, simulate the system with different temporal scaling factors $\tau=\{0.5, 1.5\}$. Generate one figure per DoF and explain the result.
 
-\begin{answer}\end{answer}
+\begin{answer}
+\includegraphics[width=87mm]{python/figures/figure_5.png}
+\includegraphics[width=87mm]{python/figures/figure_6.png}
+\end{answer}
 
 
 \end{question}
@@ -107,7 +120,10 @@ The bandwidth of the Gaussian basis (std) is set to $b=0.2$.
 Implement these basis functions in \texttt{getProMPBasis.py}. 
 Do not forget to normalize the basis such at every time-point they sum-up to one! Attach a plot showing the basis functions in time and a snippet of your code. 
 
-\begin{answer}\end{answer}
+\begin{answer}
+\includegraphics[width=170mm]{python/figures/figure_7-basisfunctions.png}
+\lstinputlisting[language=Python, firstline=4,lastline=22]{python/getProMPBasis.py}
+\end{answer}
 \end{question}
 
 %----------------------------------------------
@@ -115,7 +131,10 @@ Do not forget to normalize the basis such at every time-point they sum-up to one
 \begin{question}[bonus]{Probabilistic Movement Primitives - Training}{7}
 In this exercise you will train the ProMPs using the imitation learning data from \texttt{getImitationData.py} and the RBFs defined in the previous question. Modify the \texttt{proMP.py} in order to estimate weight vectors $w_i$ reproducing the different demonstrations. Then, fit a Gaussian using all the weight vectors. Generate a plot showing the desired trajectory distribution in time (mean and std) as well as the trajectories used for imitation. Attach a snippet of your code.
 
-\begin{answer}\end{answer}
+\begin{answer}
+\includegraphics[width=170mm]{python/figures/figure_8-trajectories.png}
+\lstinputlisting[language=Python, firstline=6,lastline=27]{python/proMP.py}
+\end{answer}
 
 \end{question}
 
@@ -124,7 +143,13 @@ In this exercise you will train the ProMPs using the imitation learning data fro
 \begin{question}[bonus]{Probabilistic Movement Primitives - Number of Basis Functions}{2}
 Evaluate the effects of using a reduced number of RBFs. Generate two plots showing the desired trajectory distribution and the trajectories used for imitation as in the previous exercise, but this time use $N=20$ and $N=10$ basis functions. Briefly analyze your results.
 
-\begin{answer}\end{answer}
+\begin{answer}
+\includegraphics[width=87mm]{python/figures/figure_9-trajectoriesN20.png}
+\includegraphics[width=87mm]{python/figures/figure_10-trajectoriesN10.png}
+\\
+On the left side were 10 radial basis functions used. On the right side 20. 
+One can easily see, that the reduction to N=20 basis functions does'nt affect the result too much, but the reductionn to N=10 does. The trajectory distribution doesn't fit the trajectories equally well anymore as with 20 functions.
+\end{answer}
 
 \end{question}
 
@@ -137,7 +162,10 @@ Assuming that the probability over the weights is given by $\mathcal{N}(\vec w|\
 \\
 Then, in a single plot, show the previous distribution (learned from imitation) and the new distribution (after conditioning). Additionally, sample $K=10$ random weight vectors from the ProMP, compute the trajectories and plot them in the same plot. Analyze briefly your results and attach a snippet of your code.
 
-\begin{answer}\end{answer}
+\begin{answer}
+\includegraphics[width=170mm]{python/figures/figure_13-conditioningN10.png}
+\lstinputlisting[language=Python, firstline=28]{python/proMP.py}
+\end{answer}
 
 \end{question}
 
