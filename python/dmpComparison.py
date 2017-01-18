@@ -24,7 +24,6 @@ def dmpComparison (goals, taus, filename):
     robot = DoubleLink()
     robot.friction = np.array([2.5, 2.5])
 
-
     t_end = 3.0
 
     sim_time = np.arange(dt, t_end-dt, dt)
@@ -36,56 +35,53 @@ def dmpComparison (goals, taus, filename):
     qdd = data[2]
 
     dmpParams = dmpTrain(q, qd, qdd, dt, len(sim_time))
-
+    dmpParams.goal = q[:,-1]
     states = np.zeros((nSteps, 4))
-    states[0,::2] = [-pi, 0]
+    states[0, ::2] = [-pi, 0]
 
     h1 = plt.figure()
     plt.hold('on')
-    p1_1, = plt.plot(sim_time, q[0,:], linewidth=2.0, label='Desired $q_1$')
+    p1_1, = plt.plot(sim_time, q[0, :], linewidth=2.0, label='Desired $q_1$')
 
     h2 = plt.figure()
     plt.hold('on')
-    p2_1, = plt.plot(sim_time, q[1,:], linewidth=2.0, label='Desired $q_2$')
+    p2_1, = plt.plot(sim_time, q[1, :], linewidth=2.0, label='Desired $q_2$')
 
-    states = simSys ( states, dmpParams, dt, nSteps )
+    states = simSys(states, dmpParams, dt, nSteps)
 
     plt.figure(h1.number)
-    p1_2, =plt.plot(sim_time, states[:,0], ':', color='r', linewidth=4.0, label='DMP $q_1$')
+    p1_2, = plt.plot(sim_time, states[:, 0], ':', color='r', linewidth=4.0, label='DMP $q_1$')
 
-
-    plt.legend(handles=[p1_1, p1_2], loc= 0)
+    plt.legend(handles=[p1_1, p1_2], loc=0)
 
     plt.figure(h2.number)
-    p2_2, =plt.plot(sim_time, states[:,2], ':', color='r', linewidth=4.0, label='DMP $q_2$')
+    p2_2, = plt.plot(sim_time, states[:, 2], ':', color='r', linewidth=4.0, label='DMP $q_2$')
 
-    plt.legend(handles=[p2_1, p2_2], loc= 0)
+    plt.legend(handles=[p2_1, p2_2], loc=0)
     dmpParamsOld = dmpParams
 
-    p1_h = [ 0, 0]
-    p2_h = [ 0, 0]
-
+    p1_h = [0, 0]
+    p2_h = [0, 0]
 
     if goals != []:
         for i in range(len(goals)):
             states = np.zeros((nSteps, 4))
             states[0,::2] = [-pi, 0]
             dmpParams.goal = goals[i]
-            states = simSys ( states, dmpParams, dt, nSteps )
+            states = simSys(states, dmpParams, dt, nSteps)
 
             plt.figure(h1.number)
-            p1_h[i], = plt.plot(sim_time,states[:,0],linewidth=2.0, label='DMP $q_1$ with goal = [' + str(goals[i][0]) + ']')
-            plt.plot(sim_time[-1],goals[i][0],'kx',markersize = 15.0)
+            p1_h[i], = plt.plot(sim_time, states[:, 0], linewidth=2.0, label='DMP $q_1$ with goal = [' + str(goals[i][0]) + ']')
+            plt.plot(sim_time[-1], goals[i][0], 'kx', markersize=15.0)
 
             plt.figure(h2.number)
-            p2_h[i], = plt.plot(sim_time,states[:,2],linewidth=2.0, label='DMP $q_2$ with goal = [' + str(goals[i][1]) + ']')
-            plt.plot(sim_time[-1],goals[i][1],'kx',markersize = 15.0)
+            p2_h[i], = plt.plot(sim_time, states[:, 2], linewidth=2.0, label='DMP $q_2$ with goal = [' + str(goals[i][1]) + ']')
+            plt.plot(sim_time[-1], goals[i][1], 'kx', markersize=15.0)
 
         plt.figure(h1.number)
-        plt.legend(handles=[p1_1, p1_2, p1_h[0], p1_h[1]], loc= 0)
+        plt.legend(handles=[p1_1, p1_2, p1_h[0], p1_h[1]], loc=0)
         plt.figure(h2.number)
-        plt.legend(handles=[p2_1, p2_2, p2_h[0], p2_h[1]], loc= 0)
-
+        plt.legend(handles=[p2_1, p2_2, p2_h[0], p2_h[1]], loc=0)
 
     dmpParams = dmpParamsOld
 
@@ -97,12 +93,12 @@ def dmpComparison (goals, taus, filename):
             states = simSys ( states, dmpParams, dt, nSteps )
 
             plt.figure(h1.number)
-            p1_h[i], = plt.plot(sim_time,states[:,0],linewidth=2.0, label='DMP $q_1$ with $\tau$ = [' + str(taus[i]) + ']')
+            p1_h[i], = plt.plot(sim_time, states[:, 0], linewidth=2.0, label='DMP $q_1$ with $\tau$ = [' + str(taus[i]) + ']')
 
             plt.figure(h2.number)
-            p2_h[i], = plt.plot(sim_time,states[:,2],linewidth=2.0, label='DMP $q_2$ with $\tau$ = [' + str(taus[i]) + ']')
+            p2_h[i], = plt.plot(sim_time, states[:, 2], linewidth=2.0, label='DMP $q_2$ with $\tau$ = [' + str(taus[i]) + ']')
 
         plt.figure(h1.number)
-        plt.legend(handles=[p1_1, p1_2, p1_h[0], p1_h[1]], loc= 0)
+        plt.legend(handles=[p1_1, p1_2, p1_h[0], p1_h[1]], loc=0)
         plt.figure(h2.number)
-        plt.legend(handles=[p2_1, p2_2, p2_h[0], p2_h[1]], loc= 0)
+        plt.legend(handles=[p2_1, p2_2, p2_h[0], p2_h[1]], loc=0)

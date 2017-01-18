@@ -18,7 +18,7 @@ def proMP (nBasis):
     print Phi.shape
     print q.shape
     # TODO find away to compute var^2 or leave it at 1 .... should be var^2 * np.eye(1499)
-    w = np.matmul(np.matmul(np.linalg.inv(np.matmul(Phi.transpose(), Phi) + np.eye(1499)), Phi.transpose()).transpose(), q.transpose())
+    w = np.matmul(np.matmul(np.linalg.inv(np.matmul(Phi.transpose(), Phi) + (bandwidth*bandwidth) * np.eye(1499)), Phi.transpose()).transpose(), q.transpose())
     mean_w = np.mean(w.transpose(), axis=0)
     cov_w = np.cov(w)
     print w.shape
@@ -46,7 +46,7 @@ def proMP (nBasis):
             phi_i[j] = np.exp(-((y_d - t_point) * (y_d - t_point)) / (Sig_d * Sig_d))
         sum_phi_i = np.sum(phi_i)
         Phi_j[i, :] = np.divide(phi_i, sum_phi_i)
-    w_new = np.matmul(np.matmul(np.linalg.inv(np.matmul(Phi.transpose(), Phi) + np.eye(1499)), Phi.transpose()).transpose(), q.transpose())
+    w_new = np.matmul(np.matmul(np.linalg.inv(np.matmul(Phi.transpose(), Phi) + (bandwidth*bandwidth) * np.eye(1499)), Phi.transpose()).transpose(), q.transpose())
     mean_w_new = np.mean(w_new.transpose(), axis=0)
     cov_w_new = np.cov(w_new)
     print w_new.shape
@@ -60,8 +60,8 @@ def proMP (nBasis):
     plt.fill_between(time, np.dot(Phi.transpose(), mean_w_new) - 2*np.sqrt(np.diag(np.dot(Phi.transpose(), np.dot(cov_w_new, Phi)))), np.dot(Phi.transpose(), mean_w_new) + 2*np.sqrt(np.diag(np.dot(Phi.transpose(), np.dot(cov_w_new, Phi)))), alpha=0.5, edgecolor='#CC4F1B', facecolor='#FF9848')
     plt.plot(time, np.dot(Phi.transpose(), mean_w_new), color='#CC4F1B')
 
-    sample_traj = np.dot(Phi.transpose(),np.random.multivariate_normal(mean_w_new,cov_w_new,10).transpose())
-    plt.plot(time,sample_traj)
+    sample_traj = np.dot(Phi.transpose(),np.random.multivariate_normal(mean_w_new, cov_w_new, 10).transpose())
+    plt.plot(time, sample_traj)
     plt.title('ProMP after contidioning with new sampled trajectories')
 
 

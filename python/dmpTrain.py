@@ -34,7 +34,7 @@ def dmpTrain(q, qd, qdd, dt, nSteps):
     params.Ts = (dt*nSteps)
     params.tau = 1
     params.nBasis = 50
-    params.goal = np.transpose(q)
+    params.goal = np.transpose(q[:, -1])
 
     Phi = getDMPBasis(params, dt, nSteps)
 
@@ -48,18 +48,18 @@ def dmpTrain(q, qd, qdd, dt, nSteps):
     ydd = np.zeros((2, 1))
     yd = np.zeros((2, 1))
     y = np.zeros((2, 1))
-    for z in range(0, nSteps-2):
+    for z in range(0, nSteps):
         ydd[0] = qdd[0][z]
         ydd[1] = qdd[1][z]
         yd[0] = qd[0][z]
         yd[1] = qd[1][z]
         y[0] = q[0][z]
         y[1] = q[1][z]
-        temp = ydd/(tau*tau) - np.transpose(alpha * (beta * np.subtract(goal[z+1], np.transpose(y)))) - (np.divide(yd, tau))
+        temp = ydd/(tau*tau) - np.transpose(alpha * (beta * np.subtract(goal, np.transpose(y)))) - (np.divide(yd, tau))
         ft[z, 0] = temp[0]
         ft[z, 1] = temp[1]
 
     # Learn the weights
-    params.w = np.matmul((np.matmul(Phi.transpose(), Phi)), np.linalg.pinv((np.matmul(Phi.transpose(), ft))).transpose())
+    params.w = np.matmul(np.linalg.inv(np.matmul(Phi.transpose(), Phi) + np.eye(50)), np.matmul(Phi.transpose(), ft))
 
     return params
