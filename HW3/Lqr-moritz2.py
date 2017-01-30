@@ -65,18 +65,10 @@ for i in range(2):
             dev[j,i] = dev[j,i] + (States[k,j,i] - mean[j,i]) * (States[k,j,i] - mean[j,i])
         dev[j, i] = dev[j, i] / 20
 
-print dev.shape
-cov_0 = np.cov(States[:,:,0].transpose())
-cov_1 = np.cov(States[:,:,1].transpose())
 the_mean = mean.transpose()
-#the_std_0 = np.sqrt(np.diag(np.dot(States[:,:,0].transpose(), np.dot(cov_0, States[:,:,0].transpose()).transpose())))
-#the_std_1 = np.sqrt(np.diag(np.dot(States[:,:,1].transpose(), np.dot(cov_1, States[:,:,1].transpose()).transpose())))
-print the_mean.shape
-#plt.plot(the_std_1,the_std_0, 'g')
 plt.plot(the_mean[0] + 2*dev[:, 0], the_mean[1] + 2*dev[:, 1], 'y')
 plt.plot(the_mean[0] - 2*dev[:, 0], the_mean[1] - 2*dev[:, 1], 'y')
-plt.plot(the_mean[0], the_mean[1], 'g')
+plt.plot(the_mean[0], the_mean[1], 'r')
 plt.fill_between(the_mean[0] + 2*dev[:, 0], the_mean[1] - 2*dev[:, 1], the_mean[1] + 2*dev[:, 1], alpha=0.5, edgecolor='#1B2ACC', facecolor='#089FFF')
 plt.fill_between(the_mean[0] - 2*dev[:, 0], the_mean[1] - 2*dev[:, 1], the_mean[1] + 2*dev[:, 1], alpha=0.5, edgecolor='#1B2ACC', facecolor='#089FFF')
-#plt.show()
 plt.show()
