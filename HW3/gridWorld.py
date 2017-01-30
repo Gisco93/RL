@@ -11,52 +11,53 @@ def gridworld():
     grid_world = data[0]
     grid_list = data[1]
 
-    probModel = data[0]
+    probModel = np.copy(data[0])
 
     ax = showWorld(grid_world, 'Environment')
     showTextState(grid_world, grid_list, ax)
-    printplot(probModel)
-    #if saveFigures:
-        #savefig('gridworld.pdf')
+    
+    if saveFigures:
+        plt.savefig('gridworld.pdf')
 
     # Finite Horizon
-    V = ValIter(probModel, 1, 15, 15, probModel)
+    R = np.copy(probModel)
+    V = ValIter(R, 0.5, 15, False, probModel)
    
     
-    showWorld(np.maximum(V, 0), 'Value Function - Finite Horizon')
+    showWorld(np.maximum(V, 0), 'Value Function - Finite Horizon\n 15 steps')
     if saveFigures:
-        savefig('value_Fin_15.pdf')
+        plt.savefig('value_Fin_test.pdf')
 
-''' policy = findPolicy(...)
-    ax = showWorld(grid_world, 'Policy - Finite Horizon')
+    policy = findPolicy(V, probModel=np.array([]))
+    ax = showWorld(grid_world, 'Policy - Finite Horizon\n 15 steps')
     showPolicy(policy, ax)
     if saveFigures:
-        savefig('policy_Fin_15.pdf')
+        plt.savefig('policy_Fin_test.pdf')
 
-# Infinite Horizon
-    V = ValIter(...)
+'''#Infinite Horizon
+    V = ValIter(R, 1, 15, True, probModel)
     showWorld(np.maximum(V, 0), 'Value Function - Infinite Horizon')
     if saveFigures:
-        savefig('value_Inf_08.pdf')
+        plt.savefig('value_Inf_08.pdf')
 
     policy = findPolicy(...);
     ax = showWorld(grid_world, 'Policy - Infinite Horizon')
     showPolicy(policy, ax)
     if saveFigures:
-        savefig('policy_Inf_08.pdf')
+        plt.savefig('policy_Inf_08.pdf')
 
-    # Finite Horizon with Probabilistic Transition
+     # Finite Horizon with Probabilistic Transition
     V = ValIter(...)
     V = V[:,:,0];
     showWorld(np.maximum(V, 0), 'Value Function - Finite Horizon with Probabilistic Transition')
     if saveFigures:
-        savefig('value_Fin_15_prob.pdf')
+        plt.savefig('value_Fin_15_prob.pdf')
 
     policy = findPolicy(...)
     ax = showWorld(grid_world, 'Policy - Finite Horizon with Probabilistic Transition')
     showPolicy(policy, ax)
     if saveFigures:
-        savefig('policy_Fin_15_prob.pdf')'''
+        plt.savefig('policy_Fin_15_prob.pdf')'''
 
 
 ##
@@ -118,17 +119,16 @@ def showPolicy(policy, ax):
 ##
 def ValIter(R, discount, maxSteps, infHor, probModel=np.array([])):
 	if maxSteps == 0:
-		V=R
+		V=np.copy(R)
 		return V
 	else:
-		V = maxAction(ValIter(R, discount, maxSteps-1, infHor, probModel), R, discount, probModel)
-		print 
-	return V #V[:,:,0] is the ideal path
+		V = np.copy(maxAction(ValIter(R, discount, maxSteps-1, infHor, probModel), R, discount, probModel))
+	return V
 				
 
 ##
 def maxAction(V, R, discount, probModel=np.array([])):
-    V_append = R
+    V_append = np.copy(R)
     for x in range(R.shape[0]):
         for y in range(R.shape[1]): #for each starting point
 				current_max = R[x,y] #staying case
@@ -138,24 +138,39 @@ def maxAction(V, R, discount, probModel=np.array([])):
 						Act[i] = 1		#
 					else:				#
 						Act[i] = 0		#
-				if R[x-Act[0],y] > current_max: current_max = R[x-Act[0],y]	#Down
-				if R[x,y+Act[1]] > current_max: current_max = R[x,y+Act[1]]	#Right
-				if R[x+Act[2],y] > current_max: current_max = R[x+Act[2],y]	#Up
-				if R[x,y-Act[3]] > current_max: current_max = R[x,y-Act[3]]	#Left
-				if V.shape != (V.shape[0], V.shape[1]): V_append[x,y] = V[0,x,y] + current_max
-				else:V_append[x,y] = V[x,y] + current_max;
+				if V[x-Act[0],y] > current_max: current_max = V[x-Act[0],y];
+				if V[x,y+Act[1]] > current_max: current_max = V[x,y+Act[1]];
+				if V[x+Act[2],y] > current_max: current_max = V[x+Act[2],y];
+				if V[x,y-Act[3]] > current_max: current_max = V[x,y-Act[3]];				
+				V_append[x,y] = R[x,y] + discount * current_max;
     return V_append
 					
-##
-#def findPolicy(V, probModel=np.array([])):
 
-def doAction(R, x, y):
-	return [((x-1) > 0), (y+1) < R.shape[1], (x+1) < R.shape[0], (y-1) > 0] #returns if action can be performed
+def findPolicy(V, probModel=np.array([])):
+    P = np.copy(V)
+    for x in range(P.shape[0]):
+        for y in range(P.shape[1]): #for each starting point
+            P[x,y] = 4
+            current_max = V[x,y]    #stay case
+            Act = doAction(P,x,y)	#
+            for i in range(4):		# translates the booleans to numbers
+                if Act[i]:			#
+                    Act[i] = 1		#
+                else:				#
+                    Act[i] = 0		#
+            if V[x+Act[2],y] > current_max: P[x,y] = 0;current_max = V[x+Act[2],y]
+            if V[x,y+Act[1]] > current_max: P[x,y] = 1;current_max = V[x,y+Act[1]]
+            if V[x-Act[0],y] > current_max: P[x,y] = 2;current_max = V[x-Act[0],y]
+            if V[x,y-Act[3]] > current_max: P[x,y] = 3;current_max = V[x,y-Act[3]]
+    return P
+
+def doAction(R, x, y):#returns wether action can be performed
+	return [((x-1) >= 0), (y+1) < R.shape[1], (x+1) < R.shape[0], (y-1) >= 0] 
 	
 def printplot(V):
-    for x in range(V.shape[0]):
-            print "{} ".format(V[x,:])
-            if x == V.shape[0]-1: print "\n"
+	for value in V:
+		print value
+	print "\n"
 
 
 
