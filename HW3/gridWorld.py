@@ -10,27 +10,27 @@ def gridworld():
     grid_world = data[0]
     grid_list = data[1]
 
-    probModel = np.array([])
+    probModel = [data[0]]
 
     ax = showWorld(grid_world, 'Environment')
     showTextState(grid_world, grid_list, ax)
-    if saveFigures:
-        savefig('gridworld.pdf')
+    #if saveFigures:
+        #savefig('gridworld.pdf')
 
     # Finite Horizon
-    V = ValIter(...)
+    V = ValIter(probModel, 1, 15, 15, probModel)
     V = V[:,:,0];
     showWorld(np.maximum(V, 0), 'Value Function - Finite Horizon')
     if saveFigures:
         savefig('value_Fin_15.pdf')
 
-    policy = findPolicy(...)
+''' policy = findPolicy(...)
     ax = showWorld(grid_world, 'Policy - Finite Horizon')
     showPolicy(policy, ax)
     if saveFigures:
         savefig('policy_Fin_15.pdf')
 
-    # Infinite Horizon
+# Infinite Horizon
     V = ValIter(...)
     showWorld(np.maximum(V, 0), 'Value Function - Infinite Horizon')
     if saveFigures:
@@ -53,7 +53,7 @@ def gridworld():
     ax = showWorld(grid_world, 'Policy - Finite Horizon with Probabilistic Transition')
     showPolicy(policy, ax)
     if saveFigures:
-        savefig('policy_Fin_15_prob.pdf')
+        savefig('policy_Fin_15_prob.pdf')'''
 
 
 ##
@@ -114,13 +114,59 @@ def showPolicy(policy, ax):
 
 ##
 def ValIter(R, discount, maxSteps, infHor, probModel=np.array([])):
-
+	if maxSteps == 0:
+		for x in range(probModel.shape[0]):
+			for y in range(probModel.shape[1]): #for each starting point
+				V[x,y] = R[x,y]
+		return V
+	else:
+		V = maxAction(ValIter(R, discount, maxSteps-1, infHor, probModel), R, discount, probModel=np.array([]))
+	return V #V[:,:,0] is the ideal path
+				
 
 ##
 def maxAction(V, R, discount, probModel=np.array([])):
-
-
+	for x in range(probModel.shape[0]):
+			for y in range(probModel.shape[1]): #for each starting point
+				current_max = R[x,y] #staying case
+				Act = doAction(R,x,y)	#
+				for i in range(4):		# translates the booleans to numbers
+					if Act[i]:			#
+						Act[i] = 1		#
+					else:				#
+						Act[i] = 0		#
+				if R[x-Act[0],y,0] > current_max: current_max = R[x-Act[0],y,0]	#Down
+				if R[x,y+Act[1],0] > current_max: current_max = R[x,y+Act[1],0]	#Right
+				if R[x+Act[2],y,0] > current_max: current_max = R[x+Act[2],y,0]	#Up
+				if R[x,y-Act[3],0] > current_max: current_max = R[x,y-Act[3],0]	#Left
+				V_append[x,y] = V[x,y,0] + current_max  
+	return np.c_[V_append, V]	
+					
 ##
-def findPolicy(V, probModel=np.array([])):
+#def findPolicy(V, probModel=np.array([])):
+
+def doAction(R, x, y):
+	return [((x-1) > 0), (y+1) < R.shape[1], (x+1) < R.shape[0], (y-1) > 0] #returns if action can be performed
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
