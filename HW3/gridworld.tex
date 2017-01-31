@@ -47,6 +47,14 @@ Using the Value Iteration algorithm, determine the optimal action for each state
 
 
 	Our policy seems appropriate given our explanation. The robot does collect dirt if it is far enough away from the toy (5,1) but otherwise will prioritize getting towards the toy. It seems so reckless that it even walks over the cat space to get to it when starting in (9,4). This however changes once the robot is limited to 14 steps forcing our robot to simply collect dirt beside the cat in (9,4). 
+	\lstinputlisting[language=Python,firstline=23,lastline=23]{Gridworld/gridWorld.py}
+	...
+	\lstinputlisting[language=Python,firstline=139,lastline=155]{Gridworld/gridWorld.py}
+	...
+	\lstinputlisting[language=Python,firstline=156,lastline=190]{Gridworld/gridWorld.py}
+	...
+	\lstinputlisting[language=Python,firstline=193,lastline=217]{Gridworld/gridWorld.py}
+	...
 \end{answer}
 
 \end{question}
@@ -57,7 +65,21 @@ Using the Value Iteration algorithm, determine the optimal action for each state
 \begin{question}{Infinite Horizon Problem - Part 1}{4}
 We now consider the infinite horizon problem, where $T=\infty$. Rewrite Equation~\eqref{Eq:J} for the infinite horizon case adding a discount factor $\gamma$. Explain briefly why the discount factor is needed.
 
-\begin{answer}\end{answer}
+\begin{answer}
+\begin{equation}
+	J_\pi = \mathbb{E}_\pi\left[\sum_{t=1}^{\infty} \gamma^{t-1} r_t(s_t,a_t)\right],
+	\label{Eq:A}
+\end{equation}
+Since like above described rewards in our case are independent of
+the action and the actions are deterministic, Equation \eqref{Eq:A} becomes
+\begin{equation}
+	J_\pi = \mathbb{E}_\pi\left[\sum_{t=1}^{\infty} \gamma^{t-1} r_t(s_t)\right],
+	\label{Eq:B}
+\end{equation}
+
+The discount factor is needed for convergence. Without the discount factor state values would be summed up until infinity. Therefore the discount factor always has to be smaller than 1, because than later summands of \eqref{Eq:B} go against 0, since the coefficient of the rewards are $\gamma^t$, and $\lim\limits_{t\rightarrow\infty}(\gamma^t) = 0$ for $\gamma < 1$ .In addition to that it makes decisions, which are made in the future ,be considered less important than more imminent decisions. The smaller the discount factor is, the faster the algorithm converges.
+
+\end{answer}
 
 \end{question}
 
@@ -68,7 +90,17 @@ We now consider the infinite horizon problem, where $T=\infty$. Rewrite Equation
 Calculate the optimal actions with the infinite horizon formulation. Use a discount factor of $\gamma=0.8$ and attach the new policy and value function plots.
 What can we say about the new policy? Is it different from the finite horizon scenario? Why?
 
-\begin{answer}\end{answer}
+\begin{answer}
+\includegraphics[scale=0.4]{Gridworld/policy_Inf_08.pdf}
+\includegraphics[scale=0.4]{Gridworld/value_Inf_08.pdf}\\
+
+We can say, that it is the optimal policy for the grid world, since iterating the Bellman Equation (Value Iteration) converges to the optimal value function, from which we extracted the optimal policy. It is different, because it decides at (9,4) to rather take the detour instead of passing by the cat. Here we have the optimal policy, the value iteration from a) would need more steps to realize that the route via the cat has a smaller return.\\
+
+\lstinputlisting[language=Python,firstline=36,lastline=36]{Gridworld/gridWorld.py}
+	...
+	
+
+\end{answer}
 
 \end{question}
 
@@ -81,7 +113,21 @@ For each of the actions \textit{up, left, down, right}, the robot has now a prob
 Additionally, the action can fail causing the robot to remain on the same state with probability $0.1$.
 Using the finite horizon formulation, calculate the optimal policy and the value function. Use a time horizon of $T=15$ steps as before. Attach your plots and comment them: what is the most common action and why does the learned policy select it?
 
-\begin{answer}\end{answer}
+\begin{answer}
+
+\includegraphics[scale=0.4 ]{Gridworld/value_Fin_15_prob.pdf}
+\includegraphics[scale=0.4 ]{Gridworld/policy_Fin_15_prob.pdf}
+
+The fact that the robot can by accident do other actions than expected slows learning tremendous since the negative values of the walls influence other state values. Because of that the most common action the robot chooses is to stay at his position. At all the 'Dirt' postions, the robot rather remains at the Dirt than risking running into a wall.\\
+However, if you run the algorithm for longer time, the results become similar to a). For e.g. T=250 we get: \\
+\includegraphics[scale=0.4 ]{Gridworld/value_Fin_15_proof.pdf}
+\includegraphics[scale=0.4 ]{Gridworld/policy_Fin_15_proof.pdf}
+
+\lstinputlisting[language=Python,firstline=48,lastline=48]{Gridworld/gridWorld.py}
+...
+
+\lstinputlisting[language=Python,firstline=218,lastline=246	]{Gridworld/gridWorld.py}
+\end{answer}
 
 \end{question}
 
@@ -92,7 +138,11 @@ Using the finite horizon formulation, calculate the optimal policy and the value
 What are the two assumptions that let us use the Value Iteration algorithm? What if they would have been not satisfied? Which other algorithm would you have used? Explain it with your own words and write down its fundamental equation.
 
 \begin{answer}
-	The Value Iteration algorithm uses the assumptions that we perfectly know our enviroment, that it is a Markov Decision Process process. We can assume that we know our enviroment and we also know it to be computable as it is discrete and finite.
+	The Value Iteration algorithm is based on two fundemental assumptions . The first is, that we know completly our environment and therefore can \textit{compute} the Value function and the associated policy. The second assumption is that its computation doesn't exceed the scale of complexity. That is to say, that we can compute it with the computer.\\ 
+	If these assumptions weren't given, we probably would use the \textit{Temporal Difference Learning} algorithm, which doesn't compute the value funtion directly, but approximates it. Through the approximation of the value function we could get our policy. Its fundamental equation is given by the following update rule:\\
+	\begin{equation}
+		V_{t+1}(s_t) = V_t(s_t) + \alpha[r_{t}+\gamma V_t(s_{t+1})-V_t(s_t)]
+	\end{equation}
 \end{answer}
 \end{question}
 
