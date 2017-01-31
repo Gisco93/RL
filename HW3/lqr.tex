@@ -86,7 +86,17 @@ and the reward function $r_t$ is
 	Compute and write down the mean and the standard deviation of the cumulative reward over the experiments. 
 	Attach a snippet of your code.
 	
-\begin{answer}\end{answer}
+\begin{answer}
+The system is following a spiral trajectory. The actual variance cant be shown with the plt plot function, because its a Tube around the red line with the height of the walls and just touching the walls in the middle.\\
+\includegraphics[scale=0.35,trim=70mm 0mm 0mm 0mm,clip=true]{states_a.png}
+The Actions are oscillating as aspected for such an spiral trajectory.\\
+\includegraphics[scale=0.35,trim=70mm 0mm 0mm 0mm,clip=true]{actions_a.png}
+\newpage
+negative cumulative reward:\\
+\includegraphics[scale=0.35,trim=70mm 0mm 0mm 0mm,clip=true]{rewards_a.png}
+\newpage
+\lstinputlisting[language=Python,breaklines=true]{lqr-1a.py}
+\end{answer}
 
 
 \end{question}
@@ -120,7 +130,9 @@ and the reward function $r_t$ is
     
     Use the same LQR system as in the previous exercise and run 20 experiments. Plot in one figure the mean and 95\% confidence of the first state, for both $\vec s^\text{des}_t = \vec r_t$ and $\vec s^\text{des}_t = \vec 0$.
 
-\begin{answer}\end{answer}
+\begin{answer}
+\includegraphics[scale=0.35,trim=0mm 0mm 0mm 0mm,clip=true]{states_b.png}
+\end{answer}
 \end{question}
 
 %---------------------------------
@@ -161,7 +173,15 @@ and the reward function $r_t$ is
 	Run 20 experiments with $\vec s^\text{des}_t = \vec 0$ computing the optimal gains $\mat K_t$ and $\vec k_t$. Plot the mean and 95\% confidence of both states for all three different controllers used so far. Use one figure per state. 
 	Report the mean and std of the cumulative reward for each controller and comment the results. Attach a snippet of your code.
 
-\begin{answer}\end{answer}
+\begin{answer}
+The contoller of 1c) has a much higher Variance than the others.\\
+\includegraphics[scale=0.35,trim=70mm 0mm 0mm 0mm,clip=true]{states_c2.png}
+As you can see rewards for 1c) are way too big, therefore we plot 1a) and 1b) together again (voilet = red+ blue)\\
+negative cumulative reward:\\
+\includegraphics[scale=0.35,trim=0mm 0mm 0mm 0mm,clip=true]{rewards_c.png}
+\includegraphics[scale=0.35,trim=0mm 0mm 0mm 0mm,clip=true]{rewards_c2.png}\newpage
+\lstinputlisting[language=Python,breaklines=true]{lqr-1a.py}
+\end{answer}
 
 \end{question}
 

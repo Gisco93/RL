@@ -18,14 +18,14 @@ def  lqr(startstate):
     states[:, 0] = startstate
     actions = np.zeros(T)
     rewards = np.zeros(T+1)
-    #for i in range(1, T+1):
-    s_des = 0
-    w_t = np.random.normal(b_t, Sig_t)
-    K_t = getK_t(1, T)
-    k_t = getk_t(1, T)
-    actions[0] = -1.0 * np.dot(K_t,s_des - states[:, 0]) + k_t
-    rewards[1] = compute_rt(states[:, 0], actions[0], H_t, 0, T)
-    states[:, 1] = np.reshape(np.reshape(np.dot(A_t, states[:, 0]), (2, 1)) + B_t * actions[0] + w_t, 2)
+    for i in range(1, T+1):
+        s_des = 0
+        w_t = np.random.normal(b_t, Sig_t)
+        K_t = getK_t(i, T)
+        k_t = getk_t(i, T)
+        actions[i-1] = np.dot(K_t,s_des - states[:, i-1]) + k_t
+        rewards[i] = compute_rt(states[:, i-1], actions[i-1], H_t, i-1, T)
+        states[:, i] = np.reshape(np.reshape(np.dot(A_t, states[:, i-1]), (2, 1)) + B_t * actions[i-1] + w_t, 2)
 
     return actions, states, rewards
 
@@ -72,7 +72,7 @@ def lqr_sdes(startstate):
     for i in range(1, T + 1):
         s_des = np.array([0])
         w_t = np.random.normal(b_t, Sig_t)
-        actions[i - 1] = -1.0 * np.dot(K_t,(s_des.transpose() - states[:, i - 1]).transpose()) + k_t
+        actions[i - 1] = np.dot(K_t, (s_des.transpose() - states[:, i - 1]).transpose()) + k_t
         rewards[i] = compute_rt(states[:, i - 1], actions[i - 1], H_t, i - 1, T)
         states[:, i] = np.reshape(np.reshape(np.dot(A_t, states[:, i - 1]), (2, 1)) + B_t * actions[i - 1] + w_t, 2)
 
@@ -202,33 +202,60 @@ for i in range(2):
 the_mean = mean.transpose()
 the_meansdes = meansdes.transpose()
 the_meankt = meankt.transpose()
-plt.plot(the_mean[0], the_mean[1] + 2*dev[:, 1], 'g')
-plt.plot(the_mean[0], the_mean[1] - 2*dev[:, 1], 'g')
-plt.plot(the_mean[0], the_mean[1], 'g')
-plt.fill_between(the_mean[0], the_mean[1] - 2*dev[:, 1], the_mean[1] + 2*dev[:, 1], alpha=0.5, edgecolor='g', facecolor='g')
-plt.fill_between(the_mean[0], the_mean[1] - 2*dev[:, 1], the_mean[1] + 2*dev[:, 1], alpha=0.5, edgecolor='g', facecolor='g')
-
-plt.plot(the_meansdes[0], the_meansdes[1] + 2*devsdes[:, 1], 'b')
-plt.plot(the_meansdes[0], the_meansdes[1] - 2*devsdes[:, 1], 'b')
-plt.plot(the_meansdes[0], the_meansdes[1], 'b')
-plt.fill_between(the_meansdes[0], the_meansdes[1] - 2*devsdes[:, 1], the_meansdes[1] + 2*devsdes[:, 1], alpha=0.5, edgecolor='b', facecolor='b')
-plt.fill_between(the_meansdes[0], the_meansdes[1] - 2*devsdes[:, 1], the_meansdes[1] + 2*devsdes[:, 1], alpha=0.5, edgecolor='b', facecolor='b')
-plt.show()
 plt.plot(the_meankt[0], the_meankt[1] + 2*devkt[:, 1], 'r')
 plt.plot(the_meankt[0], the_meankt[1] - 2*devkt[:, 1], 'r')
-plt.plot(the_meankt[0], the_meankt[1], 'r')
+plt.plot(the_meankt[0], the_meankt[1], 'r', label='(1c) Optimal Control with s_des = 0')
 plt.fill_between(the_meankt[0], the_meankt[1] - 2*devkt[:, 1], the_meankt[1] + 2*devkt[:, 1], alpha=0.5, edgecolor='r', facecolor='r')
 plt.fill_between(the_meankt[0], the_meankt[1] - 2*devkt[:, 1], the_meankt[1] + 2*devkt[:, 1], alpha=0.5, edgecolor='r', facecolor='r')
 
+plt.plot(the_mean[0], the_mean[1] + 2*dev[:, 1], 'b')
+plt.plot(the_mean[0], the_mean[1] - 2*dev[:, 1], 'b')
+plt.plot(the_mean[0], the_mean[1], 'b', label='(1a) Standart')
+plt.fill_between(the_mean[0], the_mean[1] - 2*dev[:, 1], the_mean[1] + 2*dev[:, 1], alpha=0.5, edgecolor='b', facecolor='b')
+plt.fill_between(the_mean[0], the_mean[1] - 2*dev[:, 1], the_mean[1] + 2*dev[:, 1], alpha=0.5, edgecolor='b', facecolor='b')
+
+plt.plot(the_meansdes[0], the_meansdes[1] + 2*devsdes[:, 1], 'g')
+plt.plot(the_meansdes[0], the_meansdes[1] - 2*devsdes[:, 1], 'g')
+plt.plot(the_meansdes[0], the_meansdes[1], 'g', label='(1b) s_des=r_t')
+plt.fill_between(the_meansdes[0], the_meansdes[1] - 2*devsdes[:, 1], the_meansdes[1] + 2*devsdes[:, 1], alpha=0.5, edgecolor='g', facecolor='g')
+plt.fill_between(the_meansdes[0], the_meansdes[1] - 2*devsdes[:, 1], the_meansdes[1] + 2*devsdes[:, 1], alpha=0.5, edgecolor='g', facecolor='g')
+
+plt.legend(bbox_to_anchor=(0, 1), loc=2, borderaxespad=0.)
+
 plt.show()
-a_mean = np.mean(Actions[:,:2], axis=0)
-a_dev = np.zeros(2)
-for j in range(2):
+Reward = np.zeros((20, 51))
+Rewardsdes = np.zeros((20, 51))
+Rewardkt = np.zeros((20, 51))
+r_dev = np.zeros(51)
+r_devsdes = np.zeros(51)
+r_devkt = np.zeros(51)
+Reward[:, 0] = - Rewards[:, 0]
+Rewardsdes[:, 0] = - Rewardssdes[:, 0]
+Rewardkt[:, 0] = - Rewardskt[:, 0]
+for i in range(1, 51):
+    Reward[:, i] = Reward[:, i-1] - Rewards[:, i]
+    Rewardsdes[:, i] = Rewardsdes[:, i-1] - Rewardssdes[:, i]
+    Rewardkt[:, i] = Rewardkt[:, i-1] - Rewardskt[:, i]
+
+r_mean = np.mean(Reward, axis=0)
+r_meansdes = np.mean(Rewardsdes, axis=0)
+r_meankt = np.mean(Rewardkt, axis=0)
+for j in range(51):
     for k in range(20):
-        a_dev[j] = a_dev[j] + (Actions[k, j] - a_mean[j]) * (Actions[k, j] - a_mean[j])
-    a_dev[j] = np.sqrt(a_dev[j] / 20)
-plt.plot(a_mean,'r')
-plt.plot(a_mean + 2*a_dev,  'b')
-plt.plot(a_mean - 2*a_dev, 'b')
-plt.fill_between(range(2), a_mean + 2*a_dev, a_mean - 2*a_dev, alpha=0.5, edgecolor='#1B2ACC', facecolor='#089FFF')
+        r_dev[j] = r_dev[j] + (Reward[k, j] - r_mean[j]) * (Reward[k, j] - r_mean[j])
+        r_devsdes[j] = r_devsdes[j] + (Rewardsdes[k, j] - r_meansdes[j]) * (Rewardsdes[k, j] - r_meansdes[j])
+        r_devkt[j] = r_devkt[j] + (Rewardkt[k, j] - r_meankt[j]) * (Rewardkt[k, j] - r_meankt[j])
+    r_dev[j] = np.sqrt(r_dev[j] / 20)
+    r_devsdes[j] = np.sqrt(r_devsdes[j] / 20)
+    r_devkt[j] = np.sqrt(r_devkt[j] / 20)
+
+plt.plot(r_mean, 'r', label='the_mean 1a)')
+plt.fill_between(range(51), r_mean + 2 * r_dev, r_mean - 2 * r_dev, alpha=0.5, edgecolor='r', facecolor='r')
+
+plt.plot(r_meansdes, 'b', label='the_mean for 1b) with s_des = 0')
+plt.fill_between(range(51), r_meansdes + 2 * r_devsdes, r_meansdes - 2 * r_devsdes, alpha=0.5, edgecolor='b', facecolor='b')
+
+#plt.plot(r_meankt, 'g', label='the_mean for 1c)')
+#plt.fill_between(range(51), r_meankt + 2 * r_devkt, r_meankt - 2 * r_devkt, alpha=0.5, edgecolor='g', facecolor='g')
+plt.legend(bbox_to_anchor=(0, 1), loc=2, borderaxespad=0.)
 plt.show()
