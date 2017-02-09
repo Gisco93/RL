@@ -1,7 +1,8 @@
 from matplotlib import pyplot as plt
 import numpy as np
 from Pend2dBallThrowDMP import *
-%matplotlib inline
+
+# matplotlib inline
 
 
 env = Pend2dBallThrowDMP()
