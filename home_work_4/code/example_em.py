@@ -5,8 +5,8 @@ from Pend2dBallThrowDMP import *
 
 
 numDim = 10
-numSamples = 30
-maxIter = 300
+numSamples = 25
+maxIter = 100
 numTrials = 10
 lambda_var = 7
 
@@ -15,8 +15,8 @@ env = Pend2dBallThrowDMP()
 def main():
 	# Do your learning
 	# For example, let initialize the distribution...
-	Mu_w = np.zeros(numDim)
-	Sigma_w = np.eye(numDim) * 1e5
+	Mu_w = np.ones(numDim)
+	Sigma_w = np.eye(numDim) * 0.788
 	# ... then draw a sample and simulate an episode
 	sample = mkSample(Mu_w, Sigma_w)
 	reward = rewardSample(sample)
@@ -38,8 +38,8 @@ def main():
 		weights = mkWeight(reward, beta)
 		mu = mkWeightedMean(sample, weights, reward)
 		sig = mkWeightedCovariance(sample, weights ,mu) + np.eye(numDim)
+		print mu
 		convergence = True if meanRewardDiff(reward, old_reward) < 1e-3 else False
-      
 	# Save animation
 	env.animate_fig(np.random.multivariate_normal(mu, sig))
 	plt.show()
@@ -52,7 +52,7 @@ def mkBeta(reward):
 def mkWeight(reward, beta):
 	weight = np.zeros(numSamples)
 	for current in range(numSamples):	
-		weight[current] = np.exp((reward[current] - np.max(reward)) * beta)
+		weight[current] = np.exp((reward[current] - np.max(reward)) * -beta)
 	return weight
 
 def mkSample(mu, sig):
@@ -81,7 +81,7 @@ def mkWeightedMean(sample, weight,reward):
 def mkWeightedCovariance(sample, weights,mean):
     sumOfWeights = 0
     sumOfWeightedSample = 0
-    for i in range(sample.shape[0]):
+    for i in range(numSamples):
         sumOfWeights += weights[i]
         sumOfWeightedSample += np.dot(weights[i], np.dot((sample[:,i] - mean), np.transpose(sample[:,i] - mean)))
     return np.dot((sumOfWeightedSample / sumOfWeights), np.eye(numDim))
