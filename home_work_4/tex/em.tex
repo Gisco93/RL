@@ -65,9 +65,16 @@ $ N = 25 $ samples. In order to avoid getting stuck to a local optimum, we force
 What is the average return of the final policy? 
 Use \texttt{animate\_fig} from \texttt{Pend2dBallThrowDMP.py} to show how the final policy of the robot looks like (attach all five screenshots).
 
-\begin{answer}\end{answer}
+\begin{answer}
 
-\end{question}
+	The average return of the final policy is: -39.4430848515 .\\
+	\\
+	\includegraphics[width=174mm]{EM-l7.png}
+	\lstinputlisting[language=Python,firstline=14,lastline=87]{../code/example_em.py}
+
+\end{answer}
+
+ \end{question}
 
 
 
@@ -76,8 +83,13 @@ Use \texttt{animate\_fig} from \texttt{Pend2dBallThrowDMP.py} to show how the fi
 \begin{question}{Programming Exercise}{5}
 Repeat the learning 10 times and plot the mean of the average return of all runs with $95\%$ confidence.
 Use the logarithmic scale for your plot.
+
     
-\begin{answer}\end{answer}
+\begin{answer}
+\includegraphics[width=174mm]{7-mean2.png}
+Iterations on x-axis and negative reward on y-axis.\\
+\lstinputlisting[language=Python,firstline=88,lastline=119]{../code/example_em.py}
+\end{answer}
 
 \end{question}
 
@@ -90,7 +102,10 @@ Repeat the previous exercise with temperature $\lambda = 25$ and $\lambda = 3$. 
 How does the value of $\lambda$ affects the convergence of the algorithm in theory? 
 Use the logarithmic scale for your plot.
 
-\begin{answer}\end{answer}
+\begin{answer}
+The $\lambda$ coefficient (temperature) in theory affects the convergence kind of like a learning rate. So, if you choose a bigger temperature the algorithm converges faster. However, it could just stuck in a local optima, not a global one.	
+\includegraphics[width=174mm]{lambdas.png}
+\end{answer}
 
 
 \end{question}
@@ -102,7 +117,9 @@ The problem of choosing $\lambda$ falls under a more general RL problem. Which o
 Which algorithm would allow you to automatically select the optimal $\lambda$? Explain it with your words.
 Does it still have hyperparameters to be set?
 
-\begin{answer}\end{answer}
+\begin{answer}
+It falls under the problem of hyperparameter tuning. 
+\end{answer}
 
 
 \end{question}

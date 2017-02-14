@@ -33,7 +33,9 @@ Attach snippets of your code.
 \begin{question}{A Little Trick}{5}
 	How would you improve the above implementation? (Beside using a smaller or adaptive learning rate, or using the natural gradient). What is the theory behind this ``trick''? Repeat the learning and discuss the results.
 	
-\begin{answer}\end{answer}
+\begin{answer}
+One could subtract a baseline. This yields to a function, with less variance, which would be easier to investigate.
+\end{answer}
 \end{question}
 	
 
@@ -65,7 +67,14 @@ Attach snippets of your code.
 	Write down the equation of the natural gradient. What is the theory behind it?
 	Is it always easy to use?
 	
-\begin{answer}\end{answer}
+\begin{answer}
+	\begin{equation}	
+		\delta^{NG}_w J = G(w)^{-1}\delta_wJ 
+	\end{equation}
+	It uses the Fisher Matrix, and is based on the idea of comparing the resulting distributions, while updating the parameters, using the KL-divergence to assure that the steps made by the NG doesn't affect the distribution too much.
+	It can only be used working on distribution.
+
+\end{answer}
 \end{question}
 
 \end{questions}
