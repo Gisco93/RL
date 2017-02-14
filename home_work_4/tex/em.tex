@@ -28,7 +28,12 @@ Using the weighted ML estimate,
 \end{equation}
 derive analytically the update rule for our policy $\pi(\vec{\theta}|\vec{\omega})$ for the mean $\vec{\mu}$. Show your derivations.
 
-\begin{answer}\end{answer}
+\begin{answer}
+	The update rule for a Gaussian policy is given by:\\
+	\begin{equation}
+		\mu = \frac{\sum\nolimits_{i}^{} w^{i} \theta^{i}}{\sum\nolimits_{i}^{} w^{i}}
+	\end{equation}
+\end{answer}
 
 \end{question}
 
@@ -103,7 +108,7 @@ How does the value of $\lambda$ affects the convergence of the algorithm in theo
 Use the logarithmic scale for your plot.
 
 \begin{answer}
-The $\lambda$ coefficient (temperature) in theory affects the convergence kind of like a learning rate. So, if you choose a bigger temperature the algorithm converges faster. However, it could just stuck in a local optima, not a global one.	
+The $\lambda$ coefficient (temperature) in theory affects the convergence akin to a learning rate. So, if you choose a bigger temperature the algorithm converges faster to one solution. It will however get stuck on a local maximum more easily.
 \includegraphics[width=174mm]{lambdas.png}
 \end{answer}
 
@@ -118,7 +123,7 @@ Which algorithm would allow you to automatically select the optimal $\lambda$? E
 Does it still have hyperparameters to be set?
 
 \begin{answer}
-It falls under the problem of hyperparameter tuning. 
+It falls under the problem of hyperparameter tuning. Relative Entropy policy search finds the optimal scaling factor automatically by solving a dual optimization problem. The lecture mentions trust region algorithms as one solver for finding the multipliers. We can achieve this by Maximizing reward as before and keeping it a distribution. The trick is to use something akin to a metric called Kullback-Leibler Divergence to bind the progress to a reasonable amount.
 \end{answer}
 
 
